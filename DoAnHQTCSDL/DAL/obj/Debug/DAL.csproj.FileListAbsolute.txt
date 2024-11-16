@@ -1,0 +1,9 @@
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DAL.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DAL.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DTO.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DTO.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.pdb

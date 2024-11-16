@@ -1,0 +1,11 @@
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\BLL.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\BLL.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DAL.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DTO.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DAL.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DTO.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.pdb
