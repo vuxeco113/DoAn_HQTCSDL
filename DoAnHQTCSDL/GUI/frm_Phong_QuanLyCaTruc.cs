@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frm_Phong_LichTruc : Form
+    public partial class frm_Phong_QuanLyCaTruc : Form
     {
-        public frm_Phong_LichTruc()
+        public frm_Phong_QuanLyCaTruc()
         {
             InitializeComponent();
         }

@@ -114,6 +114,7 @@ CREATE TABLE CATRUC (
     ThoiGianCa NVARCHAR(50) -- Thời Gian Ca: 'Ca Sáng', 'Ca Chiều', 'Ca Tối'
 );
 GO
+
 CREATE TABLE LICHTRUC (
     MaLichTruc CHAR(10) PRIMARY KEY, -- Mã Lịch Trực
     MaBacSi CHAR(10), -- Mã Bác Sĩ
@@ -180,6 +181,9 @@ CREATE TABLE CHITIET_PN_THUOC (
     FOREIGN KEY (MaThuoc) REFERENCES THUOC(MaThuoc) -- Khóa Ngoại
 );
 GO
+
+--Nhập liệu
+insert into CATRUC ('SA', N'Ca Sáng');
 ------------------------------------------------------------------------------------------------------------
 -------------------------------------       TRIGGER      ---------------------------------------------------
 ------------------------------------------------------------------------------------------------------------

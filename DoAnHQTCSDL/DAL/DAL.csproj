@@ -41,8 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BAC_SI_DAL.cs" />
+    <Compile Include="CA_TRUC_DAL.cs" />
     <Compile Include="CHITIET_PN_THUOC_DAL.cs" />
     <Compile Include="CHI_TIET_TOA_THUOC_DAL.cs" />
+    <Compile Include="dbContext.cs" />
+    <Compile Include="KHOA_DAL.cs" />
+    <Compile Include="LICH_TRUC_DAL.cs" />
     <Compile Include="LUUKHO_DAL.cs" />
     <Compile Include="NHACCTHUOC_DAL.cs" />
     <Compile Include="PHIEU_NHAP_THUOC_DAL.cs" />

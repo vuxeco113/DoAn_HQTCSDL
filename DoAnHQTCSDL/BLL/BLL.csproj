@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BAC_SI_BLL.cs" />
+    <Compile Include="CA_TRUC_BLL.cs" />
     <Compile Include="CHITIET_PN_THUOC_BLL.cs" />
     <Compile Include="CHI_TIET_TOA_THUOC_BLL.cs" />
+    <Compile Include="KHOA_BLL.cs" />
+    <Compile Include="LICH_TRUC_BLL.cs" />
     <Compile Include="LUUKHO_BLL.cs" />
     <Compile Include="NHACCTHUOC_BLL.cs" />
     <Compile Include="PHIEU_NHAP_THUOC_BLL.cs" />

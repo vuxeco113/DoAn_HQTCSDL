@@ -11,7 +11,7 @@ namespace DAL
 {
     public class PHIEU_NHAP_THUOC_DAL
     {
-        string connStr = "Data Source=DESKTOP-JARJMT7\\SA;Initial Catalog=QLBV;Integrated Security=True";
+        dbContext dbContext = new dbContext();
         string sql = "select * from PHIEU_NHAP_THUOC";
         SqlConnection conn;
         SqlDataAdapter adap;
@@ -19,7 +19,7 @@ namespace DAL
         DataColumn[] key = new DataColumn[1];
         public PHIEU_NHAP_THUOC_DAL()
         {
-            conn = new SqlConnection(connStr);
+            conn = new SqlConnection(dbContext.strcon);
             adap = new SqlDataAdapter(sql, conn);
             tbl = new DataTable();
             adap.Fill(tbl);

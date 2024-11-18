@@ -11,7 +11,7 @@ namespace DAL
 {
     public class THANH_TOAN_DAL
     {
-        string connStr = "Data Source=DESKTOP-JARJMT7\\SA;Initial Catalog=QLBV;Integrated Security=True";
+        dbContext dbContext = new dbContext();
         string sql = "select * from THANHTOAN";
         SqlConnection conn;
         SqlDataAdapter adap;
@@ -19,7 +19,7 @@ namespace DAL
         DataColumn[] key = new DataColumn[1];
         public THANH_TOAN_DAL()
         {
-            conn = new SqlConnection(connStr);
+            conn = new SqlConnection(dbContext.strcon);
             adap = new SqlDataAdapter(sql, conn);
             tbl = new DataTable();
             adap.Fill(tbl);
