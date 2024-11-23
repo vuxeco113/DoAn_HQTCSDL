@@ -46,7 +46,7 @@ namespace GUI
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-            load_logo();
+            //load_logo();
             
         }
 
@@ -156,20 +156,20 @@ namespace GUI
 
         private void xemLịchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Phong_XemLichTruc());
-            //label_top.Text = "Xem Lịch Trực";
+            OpenChildForm(new frm_Phong_XemLichTruc());
+            label_top.Text = "Xem Lịch Trực";
         }
 
         private void lịchTrựcToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Phong_LichTruc());
-            //label_top.Text = "Lịch Trực";
+            OpenChildForm(new frm_Phong_LichTruc());
+            label_top.Text = "Chia Lịch Trực";
         }
 
         private void chiaCaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Phong_ChiaCa());
-            //label_top.Text = "Ca Trực";
+            OpenChildForm(new frm_Phong_ChiaCa());
+            label_top.Text = "Ca Trực";
         }
 
         private void hồSơBệnhÁnToolStripMenuItem1_Click(object sender, EventArgs e)

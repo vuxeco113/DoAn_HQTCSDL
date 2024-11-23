@@ -15,6 +15,8 @@ namespace GUI
         public frm_Phong_ChiaCa()
         {
             InitializeComponent();
+
         }
+
     }
 }

@@ -114,15 +114,17 @@ CREATE TABLE CATRUC (
     ThoiGianCa NVARCHAR(50) -- Thời Gian Ca: 'Ca Sáng', 'Ca Chiều', 'Ca Tối'
 );
 GO
+
 CREATE TABLE LICHTRUC (
-    MaLichTruc CHAR(10) PRIMARY KEY, -- Mã Lịch Trực
-    MaBacSi CHAR(10), -- Mã Bác Sĩ
-    NgayTruc DATE, -- Ngày Trực
-    MaCaTruc CHAR(10), -- Ca Trực: Sáng, Chiều, Tối
-    FOREIGN KEY (MaBacSi) REFERENCES BACSI(MaBacSi), -- Khóa Ngoại
-    FOREIGN KEY (MaCaTruc) REFERENCES CATRUC(MaCaTruc) -- Khóa Ngoại
+    MaBacSi char(10) NOT NULL, -- Khóa ngoại tham chiếu BACSI
+    NgayTruc DATE NOT NULL,
+    MaCaTruc char(10) NOT NULL, -- Khóa ngoại tham chiếu CATRUC
+    PRIMARY KEY (MaBacSi, NgayTruc, MaCaTruc), -- Khóa chính phức hợp
+    FOREIGN KEY (MaBacSi) REFERENCES BACSI(MaBacSi),
+    FOREIGN KEY (MaCaTruc) REFERENCES CATRUC(MaCaTruc)
 );
 GO
+
 CREATE TABLE CHIDINHXETNGHIEM (
     MaChiDinh CHAR(10) PRIMARY KEY, -- Mã Chỉ Định
     MaPhieuKham CHAR(10), -- Mã Phiếu Khám
@@ -180,6 +182,9 @@ CREATE TABLE CHITIET_PN_THUOC (
     FOREIGN KEY (MaThuoc) REFERENCES THUOC(MaThuoc) -- Khóa Ngoại
 );
 GO
+
+--Nhập liệu
+insert into CATRUC ('SA', N'Ca Sáng');
 ------------------------------------------------------------------------------------------------------------
 -------------------------------------       TRIGGER      ---------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
@@ -502,7 +507,7 @@ BEGIN
     IF EXISTS (
         SELECT 1 
         FROM inserted i
-        JOIN LICHTRUC lt ON i.MaBacSi = lt.MaBacSi AND i.NgayTruc = lt.NgayTruc
+        JOIN LICHTRUC lt ON i.MaBacSi = lt.MaBacSi AND i.NgayTruc = lt.NgayTruc AND i.MaCaTruc = lt.MaCaTruc
     )
     BEGIN
         RAISERROR('Bác sĩ đã có lịch trực trong ngày.', 16, 1);

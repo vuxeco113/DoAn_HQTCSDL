@@ -7,3 +7,12 @@ C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csp
 C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.dll
 C:\Users\vuxec\OneDrive\Máy tính\DoAnHQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.pdb
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DAL.dll
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DAL.pdb
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DTO.dll
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DTO.pdb
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.dll
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.pdb

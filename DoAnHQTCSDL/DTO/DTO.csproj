@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BAC_SI_DTO.cs" />
+    <Compile Include="CA_TRUC_DTO.cs" />
     <Compile Include="CHITIET_PN_THUOC_DTO.cs" />
     <Compile Include="CHI_TIET_TOA_THUOC_DTO.cs" />
+    <Compile Include="KHOA_DTO.cs" />
+    <Compile Include="LICH_TRUC_DTO.cs" />
     <Compile Include="LUUKHO_DTO.cs" />
     <Compile Include="NHACCTHUOC_DTO.cs" />
     <Compile Include="PHIEU_NHAP_THUOC_DTO.cs" />
