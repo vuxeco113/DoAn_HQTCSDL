@@ -16,5 +16,9 @@ namespace GUI
         {
             InitializeComponent();
         }
+        public void test()
+        {
+
+        }
     }
 }
