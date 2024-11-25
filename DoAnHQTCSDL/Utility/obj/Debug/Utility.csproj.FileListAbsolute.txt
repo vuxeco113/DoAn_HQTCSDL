@@ -1,0 +1,6 @@
+D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\bin\Debug\Utility.dll
+D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\bin\Debug\Utility.pdb
+D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.dll
+D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.pdb

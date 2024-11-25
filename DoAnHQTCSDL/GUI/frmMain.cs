@@ -16,7 +16,7 @@ namespace GUI
         {
             InitializeComponent();
             // Thiết lập form ở chế độ full màn hình
-            this.WindowState = FormWindowState.Maximized;
+            /*this.WindowState = FormWindowState.Maximized*/;
             // Không hiển thị thanh tiêu đề
             //this.FormBorderStyle = FormBorderStyle.None;
             // Tắt việc chỉnh kích thước form
@@ -84,76 +84,57 @@ namespace GUI
 
         private void quảnLýBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_QuanLyBenhNhan());
+            OpenChildForm(new frm_Tri_QuanLyBenhNhan());
         }
 
         private void thôngTinBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_TimKiem_ThongTinBenhNhan());
-            //label_top.Text = "Tìm Kiếm Thông Tin Bệnh Nhân";
+            OpenChildForm(new frm_Tri_timkiem_BN());
+            label_top.Text = "Tìm Kiếm Thông Tin Bệnh Nhân";
         }
 
         private void toaThuốcToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_TimKiem_ToaThuoc());
-            //label_top.Text = "Tìm Kiếm Thông Tin Toa Thuốc";
+            OpenChildForm(new frm_Tri_ToaThuoc());
+            label_top.Text = "Tìm Kiếm Thông Tin Toa Thuốc";
         }
 
         private void phiếuKhámToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_TimKiem_PhieuKham());
-            //label_top.Text = "Tìm Kiếm Thông Tin Phiếu Khám";
+            OpenChildForm(new frm_Tri_timkiemphieukham());
+            label_top.Text = "Tìm Kiếm Thông Tin Phiếu Khám";
         }
 
         private void hồSơBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_XemChiTiet_HSBN());
-            //label_top.Text = "Xem chi Tiết Hồ Sơ Bệnh Nhân";
-        }
-
-        private void phiếuKhámToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new frm_XemChiTiet_PhieuKham());
-            //label_top.Text = "Xem Chi Tiết Phiếu Khám";
+            OpenChildForm(new frm_Tri_XemChiTiet_HSBN());
+            label_top.Text = "Xem chi Tiết Hồ Sơ Bệnh Nhân";
         }
 
         private void toaThuốcToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_XemChiTiet_ToaThuoc());
-            //label_top.Text = "Xem Chi Tiết Toa Thuốc";
+            OpenChildForm(new frm_Tri_xemchitiettoathuoc());
+            label_top.Text = "Xem Chi Tiết Toa Thuốc";
         }
 
         private void toaThuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Tri_ToaThuoc());
-            //label_top.Text = "Toa Thuốc";
+            OpenChildForm(new frm_Tri_ToaThuoc());
+            label_top.Text = "Toa Thuốc";
         }
 
         private void phiếuKhámToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Tri_PhieuKham());
-            //label_top.Text = "Phiếu Khám";
+            OpenChildForm(new frm_Tri_Phieukham());
+            label_top.Text = "Phiếu Khám";
 
         }
 
         private void thanhToánToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Tri_ThanhToan());
-            //label_top.Text = "Thanh Toán";
+            OpenChildForm(new frm_Tri_Thanhtoan());
+            label_top.Text = "Thanh Toán";
         }
-
-        private void bệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new frm_Tri_ThongKeBenhNhan());
-            //label_top.Text = "Thống Kê Bệnh Nhân";
-        }
-
-        private void phiếuKhámToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new frm_Tri_ThongKePhieuKham());
-            //label_top.Text = "Thống Kê Phiếu Khám";
-        }
-
         private void xemLịchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frm_Phong_XemLichTruc());
@@ -206,6 +187,12 @@ namespace GUI
         {
             //OpenChildForm(new frm_Nguyen_KiemTraBHYT());
             //label_top.Text = "Kiểm Tra BHYT";
+        }
+
+        private void phiếuXétNghiệmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_Tri_phieuxetnghiem());
+            label_top.Text = "Phiếu xét nghiệm";
         }
     }
 }
