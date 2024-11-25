@@ -1,3 +1,4 @@
+--main
 CREATE DATABASE QLBV
 USE QLBV
 go
@@ -9,13 +10,48 @@ CREATE TABLE BENHNHAN (
     DiaChi NVARCHAR(255), -- Địa Chỉ
     SoDienThoai NVARCHAR(15), -- Số Điện Thoại
 	TrangThai NVARCHAR(50),
-    MaBHYT CHAR(15) -- Mã Bảo Hiểm Y Tế, Có Thể NULL
+    MaBHYT CHAR(15), -- Mã Bảo Hiểm Y Tế, Có Thể NULL
+	Tukhoa NVARCHAR(50),
+	Denkhoa NVARCHAR(50)
 );
 GO
+ALTER TABLE BENHNHAN
+ADD Tuoi INT;
+
+INSERT INTO BENHNHAN (MaBenhNhan, HoTen, NgaySinh, GioiTinh, DiaChi, SoDienThoai, TrangThai, MaBHYT, Tukhoa, Denkhoa)
+VALUES 
+    ('BN00000001', N'Nguyễn Văn A', '1990-01-15', N'Nam', N'Hà Nội', '0905123456', N'Đang điều trị', 'BHYT0001', N'Nội khoa', N'Ngoại khoa'),
+    ('BN00000002', N'Lê Thị B', '1985-05-21', N'Nữ', N'TP Hồ Chí Minh', '0917123456', N'Xuất viện', 'BHYT0002', N'Nhi khoa', N'Tai mũi họng'),
+    ('BN00000003', N'Phạm Văn C', '1979-12-12', N'Nam', N'Đà Nẵng', '0938123456', N'Tái khám', 'BHYT0003', N'Nội khoa', N'Tim mạch'),
+    ('BN00000004', N'Hoàng Thị D', '1992-07-23', N'Nữ', N'Hải Phòng', '0949123456', N'Đang điều trị', NULL, N'Nhi khoa', N'Sản phụ khoa'),
+    ('BN00000005', N'Vũ Minh E', '1988-03-14', N'Nam', N'Cần Thơ', '0970123456', N'Chờ xét nghiệm', 'BHYT0005', N'Nội khoa', N'Ngoại khoa'),
+    ('BN00000006', N'Đỗ Thị F', '1994-11-11', N'Nữ', N'Nha Trang', '0961123456', N'Xuất viện', NULL, N'Tim mạch', N'Hô hấp'),
+    ('BN00000007', N'Trần Văn G', '1983-08-19', N'Nam', N'Vinh', '0952123456', N'Đang điều trị', 'BHYT0007', N'Nội khoa', N'Ngoại khoa'),
+    ('BN00000008', N'Ngô Thị H', '1991-10-30', N'Nữ', N'Quảng Ninh', '0923123456', N'Chờ phẫu thuật', 'BHYT0008', N'Sản phụ khoa', N'Tai mũi họng'),
+    ('BN00000009', N'Lương Minh I', '1975-09-05', N'Nam', N'Bình Dương', '0914123456', N'Tái khám', 'BHYT0009', N'Nội khoa', N'Ngoại khoa'),
+    ('BN00000010', N'Phan Thị K', '1987-04-28', N'Nữ', N'Quảng Nam', '0906123456', N'Xuất viện', NULL, N'Nhi khoa', N'Răng hàm mặt'),
+    ('BN00000011', N'Huỳnh Văn L', '1970-06-14', N'Nam', N'Huế', '0907123456', N'Chờ xét nghiệm', 'BHYT0011', N'Nội khoa', N'Tim mạch'),
+    ('BN00000012', N'Lý Thị M', '1993-02-02', N'Nữ', N'Tây Ninh', '0908123456', N'Đang điều trị', NULL, N'Nhi khoa', N'Hô hấp'),
+    ('BN00000013', N'Hồ Văn N', '1981-11-22', N'Nam', N'Hậu Giang', '0913123456', N'Tái khám', 'BHYT0013', N'Tim mạch', N'Nội tiết'),
+    ('BN00000014', N'Tạ Thị O', '1996-07-16', N'Nữ', N'Hòa Bình', '0920123456', N'Xuất viện', NULL, N'Nhi khoa', N'Răng hàm mặt'),
+    ('BN00000015', N'Cao Văn P', '1984-10-11', N'Nam', N'Bắc Giang', '0930123456', N'Đang điều trị', 'BHYT0015', N'Tai mũi họng', N'Nội khoa');
+
 CREATE TABLE KHOA (
 	MaKhoa CHAR(10) PRIMARY KEY,
 	TenKhoa NVARCHAR(50)
 )
+
+INSERT INTO KHOA (MaKhoa, TenKhoa) VALUES 
+('K01', N'Nội tổng hợp'),
+('K02', N'Ngoại tổng hợp'),
+('K03', N'Nhi khoa'),
+('K04', N'Sản khoa'),
+('K05', N'Tim mạch'),
+('K06', N'Tai mũi họng'),
+('K07', N'Tiêu hóa'),
+('K08', N'Nhãn khoa'),
+('K09', N'Da liễu'),
+('K10', N'Phục hồi chức năng');
 CREATE TABLE BACSI (
     MaBacSi CHAR(10) PRIMARY KEY, -- Mã Bác Sĩ
     HoTen NVARCHAR(100), -- Họ Tên
@@ -27,6 +63,21 @@ CREATE TABLE BACSI (
 	FOREIGN KEY (MaKhoa) REFERENCES KHOA(MaKhoa)
 );
 GO
+
+INSERT INTO BACSI (MaBacSi, HoTen, MaKhoa, SoDienThoai, SoCaTruc, MatKhau, ChucVu)
+VALUES
+('B001', N'Nguyễn Văn A', 'K01', '0901234567', 3, 'password123', N'Bác sĩ'),
+('B002', N'Phan Thị B', 'K02', '0902345678', 4, 'password123', N'Bác sĩ'),
+('B003', N'Hoàng Minh C', 'K03', '0903456789', 2, 'password123', N'Bác sĩ'),
+('B004', N'Trần Thị D', 'K01', '0904567890', 5, 'password123', N'Bác sĩ'),
+('B005', N'Lê Văn E', 'K04', '0905678901', 1, 'password123', N'Bác sĩ'),
+('B006', N'Ngô Thị F', 'K02', '0906789012', 6, 'password123', N'Bác sĩ'),
+('B007', N'Vũ Minh G', 'K03', '0907890123', 0, 'password123', N'Bác sĩ'),
+('B008', N'Phạm Thị H', 'K04', '0908901234', 7, 'password123', N'Bác sĩ'),
+('B009', N'Toàn Hoàng I', 'K01', '0909012345', 8, 'password123', N'Bác sĩ'),
+('B010', N'Hồng Thị J', 'K02', '0900123456', 9, 'password123', N'Bác sĩ');
+GO
+
 
 CREATE TABLE TOATHUOC (
     MaToa CHAR(10) NOT NULL, -- Mã Toa
@@ -40,6 +91,21 @@ CREATE TABLE TOATHUOC (
 );
 GO
 
+INSERT INTO TOATHUOC (MaToa, NgayKetoa, SoNgayDung, NgayKetThuc, SoLoaiThuoc, MaBsKetoa)
+VALUES
+('T001', '2024-11-01', 7, '2024-11-08', 3, 'B001'),
+('T002', '2024-11-02', 5, '2024-11-07', 2, 'B002'),
+('T003', '2024-11-03', 10, '2024-11-13', 4, 'B003'),
+('T004', '2024-11-04', 14, '2024-11-18', 5, 'B004'),
+('T005', '2024-11-05', 3, '2024-11-08', 1, 'B005'),
+('T006', '2024-11-06', 7, '2024-11-13', 6, 'B006'),
+('T007', '2024-11-07', 8, '2024-11-15', 2, 'B007'),
+('T008', '2024-11-08', 12, '2024-11-20', 3, 'B008'),
+('T009', '2024-11-09', 4, '2024-11-13', 4, 'B009'),
+('T010', '2024-11-10', 6, '2024-11-16', 3, 'B010');
+GO
+
+
 CREATE TABLE THUOC (
     MaThuoc CHAR(10) NOT NULL, -- Mã Thuốc
     TenThuoc NVARCHAR(50), -- Tên Thuốc
@@ -48,6 +114,20 @@ CREATE TABLE THUOC (
     CONSTRAINT PR_THUOC PRIMARY KEY (MaThuoc) -- Khóa Chính
 );
 GO
+INSERT INTO THUOC (MaThuoc, TenThuoc, ThanhPhan, Gia)
+VALUES 
+('T001', 'Paracetamol', 'Paracetamol 500mg', 2000),
+('T002', 'Ibuprofen', 'Ibuprofen 200mg', 2500),
+('T003', 'Amoxicillin', 'Amoxicillin 500mg', 3000),
+('T004', 'Vitamin C', 'Vitamin C 1000mg', 1500),
+('T005', 'Aspirin', 'Aspirin 500mg', 1800),
+('T006', 'Doxycycline', 'Doxycycline 100mg', 3500),
+('T007', 'Cetirizine', 'Cetirizine 10mg', 2200),
+('T008', 'Omeprazole', 'Omeprazole 20mg', 2800),
+('T009', 'Loratadine', 'Loratadine 10mg', 2400),
+('T010', 'Diphenhydramine', 'Diphenhydramine 25mg', 2100);
+GO
+
 
 CREATE TABLE CHITIETTOA (
     MaToa CHAR(10) NOT NULL, -- Mã Toa
@@ -59,6 +139,21 @@ CREATE TABLE CHITIETTOA (
     CONSTRAINT FK_CHITIETTOA_THUOC FOREIGN KEY (MaThuoc) REFERENCES THUOC(MaThuoc) -- Khóa Ngoại
 );
 GO
+
+INSERT INTO CHITIETTOA (MaToa, MaThuoc, SoLuong, CachDung)
+VALUES 
+('T001', 'T001', 2, N'Uống 1 viên mỗi 4 giờ'),
+('T001', 'T002', 1, N'Uống 1 viên mỗi 6 giờ'),
+('T002', 'T003', 3, N'Uống 1 viên mỗi 8 giờ'),
+('T002', 'T004', 2, N'Uống 1 viên mỗi ngày'),
+('T003', 'T005', 1, N'Uống 1 viên mỗi 6 giờ'),
+('T003', 'T006', 2, N'Uống 1 viên mỗi 8 giờ'),
+('T004', 'T007', 1, N'Uống 1 viên mỗi ngày'),
+('T004', 'T008', 1, N'Uống 1 viên vào buổi sáng'),
+('T005', 'T009', 3, N'Uống 1 viên mỗi tối'),
+('T005', 'T010', 2, N'Uống 1 viên mỗi ngày');
+GO
+
 
 CREATE TABLE PHIEUKHAM (
     MaPhieuKham CHAR(10) PRIMARY KEY, -- Mã Phiếu Khám
@@ -75,6 +170,33 @@ CREATE TABLE PHIEUKHAM (
 );
 GO
 
+INSERT INTO PHIEUKHAM (MaPhieuKham, MaBenhNhan, NgayKham, ChanDoan, MaBacSi, KetQua, GiaKham, MaToa)
+VALUES
+('PK001', 'BN00000001', '2024-11-01', N'Viêm họng cấp', 'B002', N'Đã điều trị, khỏe mạnh', 100000, 'T001')
+INSERT INTO PHIEUKHAM (MaPhieuKham, MaBenhNhan, NgayKham, ChanDoan, MaBacSi, KetQua, GiaKham, MaToa)
+VALUES
+('PK002', 'BN00000001', '2024-11-02', N'Cảm cúm', 'B003', N'Điều trị khỏi, tiếp tục theo dõi', 120000, 'T002')
+INSERT INTO PHIEUKHAM (MaPhieuKham, MaBenhNhan, NgayKham, ChanDoan, MaBacSi, KetQua, GiaKham, MaToa)
+VALUES
+('PK003', 'BN00000003', '2024-11-03', N'Đau bụng', 'B004', N'Khám và điều trị ổn', 110000, 'T003')
+INSERT INTO PHIEUKHAM (MaPhieuKham, MaBenhNhan, NgayKham, ChanDoan, MaBacSi, KetQua, GiaKham, MaToa)
+VALUES
+('PK004', 'BN00000004', '2024-11-04', N'Viêm phổi', 'B005', N'Điều trị khỏi, đã hồi phục', 150000, 'T004')
+INSERT INTO PHIEUKHAM (MaPhieuKham, MaBenhNhan, NgayKham, ChanDoan, MaBacSi, KetQua, GiaKham, MaToa)
+VALUES
+('PK005', 'BN00000005', '2024-11-05', N'Viêm dạ dày', 'B006', N'Điều trị, tái khám sau 1 tuần', 130000, 'T005')
+INSERT INTO PHIEUKHAM (MaPhieuKham, MaBenhNhan, NgayKham, ChanDoan, MaBacSi, KetQua, GiaKham, MaToa)
+VALUES
+('PK006', 'BN00000006', '2024-11-06', N'Chấn thương đầu gối', 'B007', N'Điều trị phục hồi chức năng', 140000, 'T006')
+INSERT INTO PHIEUKHAM (MaPhieuKham, MaBenhNhan, NgayKham, ChanDoan, MaBacSi, KetQua, GiaKham, MaToa)
+VALUES
+('PK007', 'BN00000008', '2024-11-07', N'Viêm gan', 'B008', N'Điều trị và theo dõi lâu dài', 160000, 'T007')
+INSERT INTO PHIEUKHAM (MaPhieuKham, MaBenhNhan, NgayKham, ChanDoan, MaBacSi, KetQua, GiaKham, MaToa)
+VALUES
+('PK008', 'BN00000008', '2024-11-08', N'Thử nghiệm máu', 'B009', N'Kết quả bình thường', 180000, 'T008')
+
+
+
 CREATE TABLE NHAPVIEN (
     MaNhapVien CHAR(10) PRIMARY KEY, -- Mã Nhập Viện
     MaBenhNhan CHAR(10), -- Mã Bệnh Nhân
@@ -87,6 +209,13 @@ CREATE TABLE NHAPVIEN (
 );
 GO
 
+INSERT INTO NHAPVIEN (MaNhapVien, MaBenhNhan, NgayNhapVien, MaBacSi, MaPhong, LyDoNhapVien)
+VALUES 
+    ('NV001', 'BN00000001', '2024-01-10', 'B001', 'P001', N'Cảm cúm nặng')
+	INSERT INTO NHAPVIEN (MaNhapVien, MaBenhNhan, NgayNhapVien, MaBacSi, MaPhong, LyDoNhapVien)
+VALUES
+    ('NV002', 'BN00000005', '2024-01-15', 'B002', 'P002', N'Viêm phổi cấp')
+
 CREATE TABLE RAVIEN (
     MaRaVien CHAR(10) PRIMARY KEY, -- Mã Ra Viện
     MaNhapVien CHAR(10), -- Mã Nhập Viện
@@ -98,6 +227,7 @@ CREATE TABLE RAVIEN (
 	FOREIGN KEY (MaBenhNhan) REFERENCES BENHNHAN(MaBenhNhan)
 );
 GO
+  
 
 CREATE TABLE HOSOBENHAN (
     MaHoSo CHAR(10) PRIMARY KEY, -- Mã Hồ Sơ
@@ -114,17 +244,15 @@ CREATE TABLE CATRUC (
     ThoiGianCa NVARCHAR(50) -- Thời Gian Ca: 'Ca Sáng', 'Ca Chiều', 'Ca Tối'
 );
 GO
-
 CREATE TABLE LICHTRUC (
-    MaBacSi char(10) NOT NULL, -- Khóa ngoại tham chiếu BACSI
-    NgayTruc DATE NOT NULL,
-    MaCaTruc char(10) NOT NULL, -- Khóa ngoại tham chiếu CATRUC
-    PRIMARY KEY (MaBacSi, NgayTruc, MaCaTruc), -- Khóa chính phức hợp
-    FOREIGN KEY (MaBacSi) REFERENCES BACSI(MaBacSi),
-    FOREIGN KEY (MaCaTruc) REFERENCES CATRUC(MaCaTruc)
+    MaLichTruc CHAR(10) PRIMARY KEY, -- Mã Lịch Trực
+    MaBacSi CHAR(10), -- Mã Bác Sĩ
+    NgayTruc DATE, -- Ngày Trực
+    MaCaTruc CHAR(10), -- Ca Trực: Sáng, Chiều, Tối
+    FOREIGN KEY (MaBacSi) REFERENCES BACSI(MaBacSi), -- Khóa Ngoại
+    FOREIGN KEY (MaCaTruc) REFERENCES CATRUC(MaCaTruc) -- Khóa Ngoại
 );
 GO
-
 CREATE TABLE CHIDINHXETNGHIEM (
     MaChiDinh CHAR(10) PRIMARY KEY, -- Mã Chỉ Định
     MaPhieuKham CHAR(10), -- Mã Phiếu Khám
@@ -133,6 +261,19 @@ CREATE TABLE CHIDINHXETNGHIEM (
     FOREIGN KEY (MaPhieuKham) REFERENCES PHIEUKHAM(MaPhieuKham) -- Khóa Ngoại
 );
 GO
+INSERT INTO CHIDINHXETNGHIEM (MaChiDinh, MaPhieuKham, LoaiChiDinh, NgayChiDinh)
+VALUES 
+    ('CD001', 'PK001', N'Xét nghiệm máu', '2024-01-10'),
+    ('CD002', 'PK002', N'Xét nghiệm nước tiểu', '2024-01-12'),
+    ('CD003', 'PK003', N'Chụp X-quang', '2024-02-05'),
+    ('CD004', 'PK004', N'Siêu âm', '2024-02-20'),
+    ('CD005', 'PK005', N'Nội soi dạ dày', '2024-03-10'),
+    ('CD006', 'PK006', N'Xét nghiệm đường huyết', '2024-04-01'),
+    ('CD007', 'PK007', N'Soi cổ tử cung', '2024-05-15'),
+    ('CD008', 'PK008', N'Điện tâm đồ', '2024-06-18');
+  
+GO
+
 
 CREATE TABLE THANHTOAN (
     MaThanhToan CHAR(10) PRIMARY KEY, -- Mã Thanh Toán
@@ -144,6 +285,17 @@ CREATE TABLE THANHTOAN (
 	FOREIGN KEY (MaRaVien) REFERENCES RAVIEN(MaRaVien)
 );
 GO
+
+INSERT INTO THANHTOAN (Mathanhtoan, MaPhieuKham, SoTien, NgayThanhToan) VALUES
+('TT001', 'PK001', 500000, '2024-11-01'),
+('TT002', 'PK002', 300000, '2024-11-02'),
+('TT003', 'PK003', 450000, '2024-11-03'),
+('TT004', 'PK004', 600000, '2024-11-04'),
+('TT005', 'PK005', 700000, '2024-11-05'),
+('TT006', 'PK006', 350000, '2024-11-06'),
+('TT007', 'PK007', 800000, '2024-11-07');
+
+
 
 CREATE TABLE LUUKHO (
     MaThuoc CHAR(10) PRIMARY KEY, -- Mã Thuốc
@@ -182,14 +334,33 @@ CREATE TABLE CHITIET_PN_THUOC (
     FOREIGN KEY (MaThuoc) REFERENCES THUOC(MaThuoc) -- Khóa Ngoại
 );
 GO
-
---Nhập liệu
-insert into CATRUC ('SA', N'Ca Sáng');
 ------------------------------------------------------------------------------------------------------------
 -------------------------------------       TRIGGER      ---------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
+--// Tính tuổi dựa trên ngày tháng năm sinh (Trí)
+CREATE TRIGGER TR_TinhTuoiBenhNhan
+ON BENHNHAN
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    BEGIN TRY
+        UPDATE BENHNHAN
+        SET Tuoi = DATEDIFF(YEAR, i.NgaySinh, GETDATE()) -
+                   CASE WHEN MONTH(i.NgaySinh) > MONTH(GETDATE()) 
+                             OR (MONTH(i.NgaySinh) = MONTH(GETDATE()) AND DAY(i.NgaySinh) > DAY(GETDATE()))
+                        THEN 1
+                        ELSE 0
+                   END
+        FROM BENHNHAN b
+        INNER JOIN inserted i ON b.MaBenhNhan = i.MaBenhNhan;
+    END TRY
+    BEGIN CATCH       
+        ROLLBACK TRANSACTION;
+        RAISERROR('Lỗi khi tính tuổi bệnh nhân.', 16, 1);
+    END CATCH
+END;
 
---// Trigger kiểm tra số lượng thuốc trong toa khi kê toa
+--// Trigger kiểm tra số lượng thuốc trong toa khi kê toa (Trí)
 CREATE TRIGGER TRG_KIEMTRA_SOLUONG_THUOC
 ON CHITIETTOA
 AFTER INSERT, UPDATE
@@ -209,7 +380,7 @@ BEGIN
 END;
 GO
 
---// Trigger tự động cập nhật ngày kết thúc toa thuốc
+--// Trigger tự động cập nhật ngày kết thúc toa thuốc (Trí)
 CREATE TRIGGER TRG_TINH_NGAYKETTHUC_TOATHUOC
 ON TOATHUOC
 AFTER INSERT, UPDATE
@@ -225,8 +396,32 @@ BEGIN
     WHERE MaToa = @MaToa;
 END;
 GO
+--// Trigger tự động cập nhật ngày kê toa thuốc là ngày hiện tại  (Trí)
+CREATE TRIGGER TRG_TU_DONG_NHAP_NGAYKETOA
+ON TOATHUOC
+AFTER INSERT
+AS
+BEGIN
+    
+    UPDATE TOATHUOC
+    SET NgayKeToa = GETDATE()
+    WHERE MaToa IN (SELECT MaToa FROM inserted);
+END;
+GO
 
---// Trigger kiểm tra bác sĩ kê toa không được trùng với bác sĩ khám bệnh
+--// Trigger tự động cập nhật ngày Khám là ngày hiện tại  (Trí)
+CREATE TRIGGER TRG_TU_DONG_NHAP_NGAYKHAM
+ON PHIEUKHAM
+AFTER INSERT
+AS
+BEGIN
+    
+    UPDATE PHIEUKHAM
+    SET NgayKham = GETDATE()
+    WHERE MaPhieuKham IN (SELECT MaPhieuKham FROM inserted);
+END;
+GO
+--// Trigger kiểm tra bác sĩ kê toa không được trùng với bác sĩ khám bệnh (Trí)
 CREATE TRIGGER TRG_KIEMTRA_BACSI_KETOAPHIEUKHAM
 ON PHIEUKHAM
 AFTER INSERT, UPDATE
@@ -247,7 +442,7 @@ BEGIN
 END;
 GO
 
---// Trigger tự động xóa chi tiết toa thuốc khi xóa toa
+--// Trigger tự động xóa chi tiết toa thuốc khi xóa toa (Trí)
 CREATE TRIGGER TRG_XOA_CHITIET_TOA
 ON TOATHUOC
 AFTER DELETE
@@ -261,7 +456,7 @@ BEGIN
 END;
 GO
 
---// Trigger kiểm tra tuổi bệnh nhân khi thêm bệnh nhân (ít nhất 1 tuổi)
+--// Trigger kiểm tra tuổi bệnh nhân khi thêm bệnh nhân (ít nhất 1 tuổi)(Trí)
 CREATE TRIGGER TR_KiemTraTuoiBenhNhan
 ON BENHNHAN
 AFTER INSERT
@@ -507,7 +702,7 @@ BEGIN
     IF EXISTS (
         SELECT 1 
         FROM inserted i
-        JOIN LICHTRUC lt ON i.MaBacSi = lt.MaBacSi AND i.NgayTruc = lt.NgayTruc AND i.MaCaTruc = lt.MaCaTruc
+        JOIN LICHTRUC lt ON i.MaBacSi = lt.MaBacSi AND i.NgayTruc = lt.NgayTruc
     )
     BEGIN
         RAISERROR('Bác sĩ đã có lịch trực trong ngày.', 16, 1);
@@ -521,7 +716,7 @@ GO
 -------------------------------------       PROCEDURE      -------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 
---// Procedure thêm bệnh nhân mới
+--// Procedure thêm bệnh nhân mới (Trí)
 CREATE PROCEDURE PROC_THEMBENHNHAN
     @MaBenhNhan CHAR(10),
     @HoTen NVARCHAR(100),
@@ -529,7 +724,11 @@ CREATE PROCEDURE PROC_THEMBENHNHAN
     @GioiTinh NVARCHAR(10),
     @DiaChi NVARCHAR(255),
     @SoDienThoai NVARCHAR(15),
-    @MaBHYT CHAR(15) = NULL
+    @MaBHYT CHAR(15) = NULL,
+	@TrangThai NVARCHAR(50),
+	@Tukhoa NVARCHAR(50),
+	@Denkhoa NVARCHAR(50)
+
 AS
 BEGIN
     IF EXISTS (SELECT * FROM BENHNHAN WHERE MaBenhNhan = @MaBenhNhan)
@@ -538,13 +737,102 @@ BEGIN
     END
     ELSE
     BEGIN
-        INSERT INTO BENHNHAN (MaBenhNhan, HoTen, NgaySinh, GioiTinh, DiaChi, SoDienThoai, MaBHYT)
-        VALUES (@MaBenhNhan, @HoTen, @NgaySinh, @GioiTinh, @DiaChi, @SoDienThoai, @MaBHYT);
+        INSERT INTO BENHNHAN (MaBenhNhan, HoTen, NgaySinh, GioiTinh, DiaChi, SoDienThoai, MaBHYT,TrangThai,Tukhoa,Denkhoa)
+        VALUES (@MaBenhNhan, @HoTen, @NgaySinh, @GioiTinh, @DiaChi, @SoDienThoai, @MaBHYT,@TrangThai,@Tukhoa,@Denkhoa);
+    END
+END;
+GO
+--///////// sửa bệnh nhân (Trí)
+CREATE PROCEDURE PROC_SUABENHNHAN
+    @MaBenhNhan CHAR(10),
+    @HoTen NVARCHAR(100),
+    @NgaySinh DATE,
+    @GioiTinh NVARCHAR(10),
+    @DiaChi NVARCHAR(255),
+    @SoDienThoai NVARCHAR(15),
+    @MaBHYT CHAR(15) = NULL,
+    @Tukhoa NVARCHAR(50),
+    @Denkhoa NVARCHAR(50)
+AS
+BEGIN
+    -- Kiểm tra xem mã bệnh nhân có tồn tại trong bảng hay không
+    IF NOT EXISTS (SELECT * FROM BENHNHAN WHERE MaBenhNhan = @MaBenhNhan)
+    BEGIN
+        RAISERROR ('Mã bệnh nhân không tồn tại.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        -- Nếu mã bệnh nhân tồn tại, tiến hành cập nhật thông tin
+        UPDATE BENHNHAN
+        SET HoTen = @HoTen,
+            NgaySinh = @NgaySinh,
+            GioiTinh = @GioiTinh,
+            DiaChi = @DiaChi,
+            SoDienThoai = @SoDienThoai,
+            MaBHYT = @MaBHYT,
+            Tukhoa = @Tukhoa,
+            Denkhoa = @Denkhoa
+        WHERE MaBenhNhan = @MaBenhNhan;
+    END
+END;
+GO
+--//////////////// xóa bệnh nhân (Trí)
+CREATE PROCEDURE PROC_XOABENHNHAN
+    @MaBenhNhan CHAR(10)
+AS
+BEGIN
+    
+    IF NOT EXISTS (SELECT * FROM BENHNHAN WHERE MaBenhNhan = @MaBenhNhan)
+    BEGIN
+        RAISERROR ('Mã bệnh nhân không tồn tại.', 16, 1);
+    END
+    ELSE
+    BEGIN
+       
+        DELETE FROM BENHNHAN
+        WHERE MaBenhNhan = @MaBenhNhan;
+    END
+END;
+GO
+--////////xóa phiếu khám (Trí)
+CREATE PROCEDURE PROC_XOAPHIEUKHAM		
+    @MaPhieuKham CHAR(10)
+AS
+BEGIN
+    
+    IF NOT EXISTS (SELECT * FROM PHIEUKHAM WHERE MaPhieuKham = @MaPhieuKham)
+    BEGIN
+        RAISERROR ('Mã phiếu khám không tồn tại.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        
+        DELETE FROM PHIEUKHAM
+        WHERE MaPhieuKham = @MaPhieuKham;
     END
 END;
 GO
 
---// Procedure truy vấn bệnh án của một bệnh nhân
+--////////xóa toa thuốc (Trí)
+CREATE PROCEDURE PROC_XOATOA	
+    @MaToa CHAR(10)
+AS
+BEGIN
+   
+    IF NOT EXISTS (SELECT * FROM TOATHUOC WHERE MaToa = @MaToa)
+    BEGIN
+        RAISERROR (N'Mã toa không tồn tại.', 16, 1);
+    END
+    ELSE
+    BEGIN
+       
+        DELETE FROM TOATHUOC
+        WHERE MaToa = @MaToa;
+    END
+END;
+GO
+
+--// Procedure truy vấn bệnh án của một bệnh nhân (Trí)
 CREATE PROCEDURE PROC_XEMHOSOBENHAN
     @MaBenhNhan CHAR(10)
 AS
@@ -553,20 +841,27 @@ BEGIN
 END;
 GO
 
---// Procedure tiếp nhận bệnh nhân
+--// Procedure tiếp nhận bệnh nhân (Trí)
 CREATE PROCEDURE PROC_TIEPNHANBENHNHAN
+    @MaPhieuKham CHAR(10),
     @MaBenhNhan CHAR(10),
-    @NgayKham DATE
+    @NgayKham DATE ,
+    @ChanDoan NVARCHAR(255), 
+    @MaBacSi CHAR(10), 
+    @KetQua NVARCHAR(255), 
+    @GiaKham FLOAT, 
+    @MaToa CHAR(10)
+
 AS
 BEGIN
-    INSERT INTO PHIEUKHAM (MaBenhNhan, NgayKham)
-    VALUES (@MaBenhNhan, @NgayKham);
+    INSERT INTO PHIEUKHAM (MaPhieuKham,MaBenhNhan, NgayKham,ChanDoan,MaBacSi,KetQua,GiaKham,MaToa)
+    VALUES (@MaPhieuKham,@MaBenhNhan, @NgayKham,@ChanDoan,@MaBacSi,@KetQua,@GiaKham,@MaToa);
 
     PRINT 'Bệnh nhân đã được tiếp nhận';
 END;
 GO
 
---// Procedure phân bổ bác sĩ khám
+--// Procedure phân bổ bác sĩ khám  (Trí)
 CREATE PROCEDURE PROC_PHANBOBACSIKHAM
     @MaPhieuKham CHAR(10),
     @MaBacSi CHAR(10)
@@ -580,7 +875,7 @@ BEGIN
 END;
 GO
 
---// Procedure khám lâm sàng
+--// Procedure khám lâm sàng (Trí)
 CREATE PROCEDURE PROC_KHAMLAMSANG
     @MaPhieuKham CHAR(10),
     @ChanDoan NVARCHAR(255),
@@ -596,21 +891,22 @@ BEGIN
 END;
 GO
 
---// Procedure chỉ định xét nghiệm hoặc chẩn đoán hình ảnh
+--// Procedure chỉ định xét nghiệm hoặc chẩn đoán hình ảnh (Trí)
 CREATE PROCEDURE PROC_CDXETNGHIEM
+    @MaChiDinh CHAR(10),
     @MaPhieuKham CHAR(10),
     @LoaiChiDinh NVARCHAR(255),
     @NgayChiDinh DATE
 AS
 BEGIN
-    INSERT INTO CHIDINHXETNGHIEM (MaPhieuKham, LoaiChiDinh, NgayChiDinh)
-    VALUES (@MaPhieuKham, @LoaiChiDinh, @NgayChiDinh);
-
-    PRINT 'Chỉ định xét nghiệm/chẩn đoán đã được tạo';
+    INSERT INTO CHIDINHXETNGHIEM (MaChiDinh,MaPhieuKham, LoaiChiDinh, NgayChiDinh)
+    VALUES (@MaChiDinh,@MaPhieuKham, @LoaiChiDinh, @NgayChiDinh);
+	
+    PRINT N'Chỉ định xét nghiệm/chẩn đoán chưa được tạo';
 END;
 GO
 
---// Procedure xử lý kết quả xét nghiệm, chẩn đoán
+--// Procedure xử lý kết quả xét nghiệm, chẩn đoán (Trí)
 CREATE PROCEDURE PROC_XULYKETQUAXETNGHIEM
     @MaPhieuKham CHAR(10),
     @KetQuaXetNghiem NVARCHAR(255)
@@ -624,72 +920,42 @@ BEGIN
 END;
 GO
 
---// Procedure đưa ra phác đồ điều trị
-CREATE PROCEDURE PROC_PHACDODIEUTRI
+--// Procedure đưa ra phác đồ điều trị (Trí)
+CREATE PROCEDURE PhacDoDieuTri
     @MaPhieuKham CHAR(10),
     @MaToa CHAR(10),
-    @NgayKeToa DATE,
+    @NgayKetToa DATE,
     @SoNgayDung INT,
+	@NgayKetThuc DATE,
     @SoLoaiThuoc INT,
     @MaBacSi CHAR(10)
 AS
 BEGIN
-    INSERT INTO TOATHUOC (MaToa, NgayKeToa, SoNgayDung, SoLoaiThuoc, MaBsKetoa)
-    VALUES (@MaToa, @NgayKeToa, @SoNgayDung, @SoLoaiThuoc, @MaBacSi);
+    INSERT INTO TOATHUOC (MATOA, NGAYKETOA, SONGAYDUNG,NGAYKETTHUC, SOLOAITHUOC, MaBsKetoa)
+    VALUES (@MaToa, @NgayKetToa, @SoNgayDung,@NgayKetThuc, @SoLoaiThuoc, @MaBacSi);
 
     UPDATE PHIEUKHAM
-    SET MaToa = @MaToa
+    SET MATOA = @MaToa
     WHERE MaPhieuKham = @MaPhieuKham;
 
     PRINT 'Phác đồ điều trị đã được đưa ra';
 END;
-GO
 
---// Procedure thanh toán và hoàn tất thủ tục
+
+--// Procedure thanh toán và hoàn tất thủ tục (Trí)
 CREATE PROCEDURE PROC_THANHTOANTHUTUC
+    @Mathanhtoan CHAR(10),
     @MaPhieuKham CHAR(10),
     @SoTien FLOAT
 AS
 BEGIN
-    INSERT INTO THANHTOAN (MaPhieuKham, SoTien, NgayThanhToan)
-    VALUES (@MaPhieuKham, @SoTien, GETDATE());
+    INSERT INTO THANHTOAN (Mathanhtoan,MaPhieuKham, SoTien, NgayThanhToan)
+    VALUES (@Mathanhtoan,@MaPhieuKham, @SoTien, GETDATE());
 
     PRINT 'Thanh toán hoàn tất';
 END;
 GO
 
---// Procedure mua thuốc tại nhà thuốc bệnh viện
-CREATE PROCEDURE PROC_MUATHUOC
-    @MaToa CHAR(10)
-AS
-BEGIN
-    DECLARE ThuocCursor CURSOR FOR
-    SELECT MaThuoc, SoLuong, CachDung
-    FROM CHITIETTOA
-    WHERE MaToa = @MaToa;
-
-    DECLARE @MaThuoc CHAR(10);
-    DECLARE @SoLuong INT;
-    DECLARE @CachDung NVARCHAR(50);
-
-    OPEN ThuocCursor;
-    FETCH NEXT FROM ThuocCursor INTO @MaThuoc, @SoLuong, @CachDung;
-
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        UPDATE LUUKHO
-        SET SoLuongTon = SoLuongTon - @SoLuong
-        WHERE MaThuoc = @MaThuoc;
-
-        FETCH NEXT FROM ThuocCursor INTO @MaThuoc, @SoLuong, @CachDung;
-    END;
-
-    CLOSE ThuocCursor;
-    DEALLOCATE ThuocCursor;
-
-    PRINT 'Thuốc đã được mua thành công';
-END;
-GO
 
 --// Procedure thêm hồ sơ bệnh án
 CREATE PROCEDURE PROC_THEMHOSOBENHAN
@@ -977,7 +1243,7 @@ GO
 -------------------------------------       FUNCTION      -------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 
---// Hàm kiểm tra lịch sử khám bệnh của bệnh nhân
+--// Hàm kiểm tra lịch sử khám bệnh của bệnh nhân (Trí)
 CREATE FUNCTION FUNC_LICH_SU_KHAM_BENH(
     @MaBenhNhan CHAR(10)
 )
@@ -985,14 +1251,27 @@ RETURNS TABLE
 AS
 RETURN
 (
-    SELECT PK.MaPhieuKham, PK.NgayKham, PK.ChanDoan, PK.KetQua, BS.HoTen AS TenBacSi
+    SELECT PK.MaPhieuKham, PK.NgayKham, PK.ChanDoan, PK.KetQua, BS.HoTen AS TenBacSi,MaChiDinh,LoaiChiDinh,NgayChiDinh, MaKhoa
     FROM PHIEUKHAM PK
-    JOIN BACSI BS ON PK.MaBacSi = BS.MaBacSi
+    JOIN BACSI BS ON PK.MaBacSi = BS.MaBacSi join CHIDINHXETNGHIEM CD on PK.MaPhieuKham=CD.MaPhieuKham
     WHERE PK.MaBenhNhan = @MaBenhNhan
 );
 GO
+--// Hàm kiểm tra Thông tin của bệnh nhân (Trí)
+CREATE FUNCTION FUNC_THONG_TIN_BENH_NHAN(
+    @MaBenhNhan CHAR(10)
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT BN.MaBenhNhan, BN.HoTen AS TenBenhNhan, BN.GioiTinh, BN.NgaySinh, BN.DiaChi, BN.SoDienThoai, MaBHYT, Tuoi
+    FROM BENHNHAN BN
+    WHERE BN.MaBenhNhan = @MaBenhNhan
+);
+GO
 
---// Hàm tính tổng số ngày sử dụng thuốc của bệnh nhân
+--// Hàm tính tổng số ngày sử dụng thuốc của bệnh nhân (Trí)
 CREATE FUNCTION FUNC_TONG_SO_NGAY_DUNG_THUOC(
     @MaBenhNhan CHAR(10)
 )
@@ -1007,8 +1286,27 @@ BEGIN
     RETURN ISNULL(@TongSoNgay, 0);
 END;
 GO
+--// Hàm xem chi tiết toa thuốc dựa trên mã toa (Trí)
+CREATE FUNCTION FN_ChiTietToaThuoc(
+    @MaToa CHAR(10)
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT 
+	    CT.MaToa,
+        CT.MATHUOC, 
+        TH.TENTHUOC, 
+        CT.SOLUONG, 		
+		THANHPHAN,
+        CT.CACHDUNG
+    FROM CHITIETTOA CT
+    JOIN THUOC TH ON CT.MATHUOC = TH.MATHUOC
+    WHERE CT.MATOA = @MaToa
+);
 
---// Hàm lấy danh sách thuốc trong toa thuốc
+--// Hàm lấy danh sách thuốc trong toa thuốc (Trí)
 CREATE FUNCTION FUNC_CHI_TIET_TOA_THUOC(
     @MaToa CHAR(10)
 )
@@ -1022,8 +1320,30 @@ RETURN
     WHERE CT.MATOA = @MaToa
 );
 GO
+--// Hàm tính tuổi khi có ngày sinh ( Trí)
+CREATE FUNCTION TINH_TUOI
+(
+    @NgaySinh DATE -- Tham số ngày sinh
+)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @Tuoi INT;
 
---// Hàm tính tổng số thuốc đã kê trong toa thuốc của bệnh nhân
+    -- Tính tuổi chính xác
+    SET @Tuoi = DATEDIFF(YEAR, @NgaySinh, GETDATE()) -
+                CASE 
+                    WHEN MONTH(@NgaySinh) > MONTH(GETDATE()) 
+                         OR (MONTH(@NgaySinh) = MONTH(GETDATE()) AND DAY(@NgaySinh) > DAY(GETDATE()))
+                    THEN 1 
+                    ELSE 0 
+                END;
+
+    RETURN @Tuoi; 
+END;
+GO
+
+--// Hàm tính tổng số thuốc đã kê trong toa thuốc của bệnh nhân (Trí)
 CREATE FUNCTION FUNC_TONG_SO_THUOC_TRONG_TOA(
     @MaToa CHAR(10)
 )
@@ -1038,7 +1358,7 @@ BEGIN
 END;
 GO
 
---// Hàm lấy danh sách bệnh nhân do một bác sĩ điều trị
+--// Hàm lấy danh sách bệnh nhân do một bác sĩ điều trị (Trí)
 CREATE FUNCTION FUNC_DANH_SACH_BENH_NHAN_DIEU_TRI(
     @MaBacSi CHAR(10)
 )
@@ -1046,30 +1366,55 @@ RETURNS TABLE
 AS
 RETURN
 (
-    SELECT BN.MaBenhNhan, BN.HoTen, BN.NgaySinh, BN.GioiTinh, BN.DiaChi
+    SELECT BN.MaBenhNhan, BN.HoTen, BN.NgaySinh, BN.GioiTinh, BN.DiaChi,SoDienThoai,MaBHYT, Tuoi,Tukhoa,Denkhoa,TrangThai
     FROM BENHNHAN BN
     JOIN PHIEUKHAM PK ON BN.MaBenhNhan = PK.MaBenhNhan
     WHERE PK.MaBacSi = @MaBacSi
 );
 GO
 
---// Hàm lấy thông tin bệnh nhân theo mã bảo hiểm y tế
-CREATE FUNCTION FUNC_THONG_TIN_BENH_NHAN_THEO_BHYT(
-    @MaBHYT CHAR(15)
+--// Hàm lấy danh sách bệnh nhân theo mã bệnh nhân (Trí)
+CREATE FUNCTION FUNC_DANH_SACH_BENH_NHAN(
+    @MaBenhNhan CHAR(10)
 )
 RETURNS TABLE
 AS
 RETURN
 (
-    SELECT BN.MaBenhNhan, BN.HoTen, BN.NgaySinh, BN.GioiTinh, BN.DiaChi, BN.SoDienThoai
+    SELECT BN.MaBenhNhan, BN.HoTen, BN.NgaySinh, BN.GioiTinh, BN.DiaChi,SoDienThoai,MaBHYT, Tuoi,Tukhoa,Denkhoa,TrangThai
     FROM BENHNHAN BN
-    WHERE BN.MaBHYT = @MaBHYT
+    WHERE BN.MaBenhNhan = @MaBenhNhan
 );
 GO
+--//Hàm lấy danh sách phiếu khám theo mã (Trí)
+CREATE FUNCTION FN_danhsachphieukham(
+    @MaPhieuKham CHAR(15)
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT*
+    FROM PHIEUKHAM PK
+    WHERE PK.MaPhieuKham = @MaPhieuKham
+);
+--//Hàm lấy danh sách phiếu khám theo ngày khám (Trí)
+CREATE FUNCTION FN_danhsachphieukhamtheongay(
+    @NgayKham DATE
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT*
+    FROM PHIEUKHAM PK
+    WHERE PK.NgayKham = @NgayKham
+);
 
---// Hàm kiểm tra tình trạng sức khỏe của bệnh nhân
+
+--// Hàm kiểm tra tình trạng sức khỏe của bệnh nhân (Trí)
 CREATE FUNCTION FUNC_TINH_TRANG_SUC_KHOE(
-    @MaBenhNhan CHAR(10)
+   @MaPhieuKham CHAR(10)
 )
 RETURNS NVARCHAR(255)
 AS
@@ -1078,15 +1423,13 @@ BEGIN
     
     SELECT @KetQua = PK.KetQua
     FROM PHIEUKHAM PK
-    WHERE PK.MaBenhNhan = @MaBenhNhan
+    WHERE PK.MaPhieuKham = @MaPhieuKham
     ORDER BY PK.NgayKham DESC
     OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY; -- Lấy kết quả khám gần nhất
     
     RETURN ISNULL(@KetQua, N'Chưa có kết quả khám');
-END;
-GO
-
---// Hàm lấy thông tin toa thuốc theo mã bệnh nhân
+	END;
+--// Hàm lấy thông tin toa thuốc theo mã bệnh nhân (Trí)
 CREATE FUNCTION FUNC_TOA_THUOC_THEO_BENH_NHAN(
     @MaBenhNhan CHAR(10)
 )
@@ -1094,15 +1437,28 @@ RETURNS TABLE
 AS
 RETURN
 (
-    SELECT TT.MATOA, TT.NGAYKETOA, TT.SONGAYDUNG, BS.HoTen AS BacSiKeToa
+    SELECT TT.MATOA, TT.NGAYKETOA, TT.SONGAYDUNG, BS.HoTen AS BacSiKeToa,NGAYKETTHUC,SOLOAITHUOC
     FROM TOATHUOC TT
     JOIN PHIEUKHAM PK ON TT.MATOA = PK.MATOA
     JOIN BACSI BS ON TT.MaBsKetoa = BS.MaBacSi
     WHERE PK.MaBenhNhan = @MaBenhNhan
 );
 GO
+--// Hàm lấy thông tin toa thuốc theo mã Toa thuốc (Trí)
+CREATE FUNCTION FUNC_TOA_THUOC_THEO_TOA_THUOC(
+    @MATOA CHAR(10)
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT TT.MATOA, TT.NGAYKETOA, TT.SONGAYDUNG, MaBsKetoa,NGAYKETTHUC,SOLOAITHUOC
+    FROM TOATHUOC TT
+    WHERE TT.MATOA = @MATOA
+);
+GO
 
---// Hàm kiểm tra xem bệnh nhân đã được nhập viện lần nào chưa
+--// Hàm kiểm tra xem bệnh nhân đã được nhập viện lần nào chưa (Trí)
 CREATE FUNCTION FUNC_KIEM_TRA_NHAP_VIEN(
     @MaBenhNhan CHAR(10)
 )
@@ -1367,73 +1723,6 @@ GO
 ------------------------------------------------------------------------------------------------------------
 -------------------------------------       CURSOR      -------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
-
---// Con trỏ để truy xuất hồ sơ khám bệnh của bệnh nhân
-DECLARE @MaPhieuKham CHAR(10), 
-		@MaBenhNhan CHAR(10), 
-		@NgayKham DATE;
-DECLARE CURS_HOSO_KHAM CURSOR FOR 
-SELECT MaPhieuKham, MaBenhNhan, NgayKham FROM PHIEUKHAM;
-
-OPEN CURS_HOSO_KHAM;
-FETCH NEXT FROM CURS_HOSO_KHAM INTO @MaPhieuKham, @MaBenhNhan, @NgayKham;
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    PRINT 'ID phiếu khám: ' + @MaPhieuKham + ', ID bệnh nhân: ' + @MaBenhNhan + ', Ngày khám: ' + CAST(@NgayKham AS NVARCHAR);
-    FETCH NEXT FROM CURS_HOSO_KHAM INTO @MaPhieuKham, @MaBenhNhan, @NgayKham;
-END
-CLOSE CURS_HOSO_KHAM;
-DEALLOCATE CURS_HOSO_KHAM;
-
---// Con trỏ để truy xuất thông tin bệnh nhân
-DECLARE @maBN CHAR(10), 
-		@HoTen NVARCHAR(100);
-DECLARE CURS_THONGTIN_BN CURSOR FOR 
-SELECT MaBenhNhan, HoTen FROM BENHNHAN;
-
-OPEN CURS_THONGTIN_BN;
-FETCH NEXT FROM CURS_THONGTIN_BN INTO @maBN, @HoTen;
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    PRINT 'Bệnh nhân: ' + @HoTen;
-    FETCH NEXT FROM CURS_THONGTIN_BN INTO @maBN, @HoTen;
-END
-CLOSE CURS_THONGTIN_BN;
-DEALLOCATE CURS_THONGTIN_BN;
-
---// Con trỏ để truy xuất tất cả các toa thuốc
-DECLARE @MA_T CHAR(10), 
-		@NgayKetToa DATE, 
-		@MaBacSi CHAR(10);
-DECLARE CURS_ALL_TOATHUOC CURSOR FOR 
-SELECT MATOA, NgayKetoa, MaBsKetoa FROM TOATHUOC;
-
-OPEN CURS_ALL_TOATHUOC;
-FETCH NEXT FROM CURS_ALL_TOATHUOC INTO @MA_T, @NgayKetToa, @MaBacSi;
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    PRINT 'ID toa thuốc: ' + @MA_T;
-    FETCH NEXT FROM CURS_ALL_TOATHUOC INTO @MA_T, @NgayKetToa, @MaBacSi;
-END
-CLOSE CURS_ALL_TOATHUOC;
-DEALLOCATE CURS_ALL_TOATHUOC;
-
---// Con trỏ để truy xuất chẩn đoán từ hồ sơ khám bệnh
-DECLARE @Ma_PK CHAR(10), 
-		@ChanDoan NVARCHAR(255);
-DECLARE CURS_CHUANDOAN CURSOR FOR 
-SELECT MaPhieuKham, ChanDoan FROM PHIEUKHAM;
-
-OPEN CURS_CHUANDOAN;
-FETCH NEXT FROM CURS_CHUANDOAN INTO @Ma_PK, @ChanDoan;
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    PRINT 'ID phiếu khám: ' + @Ma_PK + ', Chẩn đoán: ' + @ChanDoan;
-    FETCH NEXT FROM CURS_CHUANDOAN INTO @Ma_PK, @ChanDoan;
-END
-CLOSE CURS_CHUANDOAN;
-DEALLOCATE CURS_CHUANDOAN;
-
 ------------------------------------------------------------------------------------------------------------
 -- Xuất hồ sơ và thông tin bác sĩ
 DECLARE CURS_HO_SO_BAC_SI CURSOR FOR

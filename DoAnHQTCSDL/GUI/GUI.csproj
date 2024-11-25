@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -136,53 +137,41 @@
     <Compile Include="frm_Phong_XemLichTruc.Designer.cs">
       <DependentUpon>frm_Phong_XemLichTruc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_QuanLyBenhNhan.cs">
+    <Compile Include="frm_Tri_QuanLyBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_QuanLyBenhNhan.Designer.cs">
-      <DependentUpon>frm_QuanLyBenhNhan.cs</DependentUpon>
+    <Compile Include="frm_Tri_QuanLyBenhNhan.Designer.cs">
+      <DependentUpon>frm_Tri_QuanLyBenhNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_TimKiem_PhieuKham.cs">
+    <Compile Include="frm_Tri_timkiemphieukham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_TimKiem_PhieuKham.Designer.cs">
-      <DependentUpon>frm_TimKiem_PhieuKham.cs</DependentUpon>
+    <Compile Include="frm_Tri_timkiemphieukham.Designer.cs">
+      <DependentUpon>frm_Tri_timkiemphieukham.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_TimKiem_ThongTinBenhNhan.cs">
+    <Compile Include="frm_Tri_timkiem_BN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_TimKiem_ThongTinBenhNhan.Designer.cs">
-      <DependentUpon>frm_TimKiem_ThongTinBenhNhan.cs</DependentUpon>
+    <Compile Include="frm_Tri_timkiem_BN.Designer.cs">
+      <DependentUpon>frm_Tri_timkiem_BN.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_TimKiem_ToaThuoc.cs">
+    <Compile Include="frm_Tri_timkiem_toathuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_TimKiem_ToaThuoc.Designer.cs">
-      <DependentUpon>frm_TimKiem_ToaThuoc.cs</DependentUpon>
+    <Compile Include="frm_Tri_timkiem_toathuoc.Designer.cs">
+      <DependentUpon>frm_Tri_timkiem_toathuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Tri_PhieuKham.cs">
+    <Compile Include="frm_Tri_Phieukham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Tri_PhieuKham.Designer.cs">
-      <DependentUpon>frm_Tri_PhieuKham.cs</DependentUpon>
+    <Compile Include="frm_Tri_Phieukham.Designer.cs">
+      <DependentUpon>frm_Tri_Phieukham.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Tri_ThanhToan.cs">
+    <Compile Include="frm_Tri_Thanhtoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Tri_ThanhToan.Designer.cs">
-      <DependentUpon>frm_Tri_ThanhToan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Tri_ThongKeBenhNhan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Tri_ThongKeBenhNhan.Designer.cs">
-      <DependentUpon>frm_Tri_ThongKeBenhNhan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Tri_ThongKePhieuKham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Tri_ThongKePhieuKham.Designer.cs">
-      <DependentUpon>frm_Tri_ThongKePhieuKham.cs</DependentUpon>
+    <Compile Include="frm_Tri_Thanhtoan.Designer.cs">
+      <DependentUpon>frm_Tri_Thanhtoan.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Tri_ToaThuoc.cs">
       <SubType>Form</SubType>
@@ -190,23 +179,23 @@
     <Compile Include="frm_Tri_ToaThuoc.Designer.cs">
       <DependentUpon>frm_Tri_ToaThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_XemChiTiet_HSBN.cs">
+    <Compile Include="frm_Tri_XemChiTiet_HSBN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_XemChiTiet_HSBN.Designer.cs">
-      <DependentUpon>frm_XemChiTiet_HSBN.cs</DependentUpon>
+    <Compile Include="frm_Tri_XemChiTiet_HSBN.Designer.cs">
+      <DependentUpon>frm_Tri_XemChiTiet_HSBN.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_XemChiTiet_PhieuKham.cs">
+    <Compile Include="frm_Tri_phieuxetnghiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_XemChiTiet_PhieuKham.Designer.cs">
-      <DependentUpon>frm_XemChiTiet_PhieuKham.cs</DependentUpon>
+    <Compile Include="frm_Tri_phieuxetnghiem.Designer.cs">
+      <DependentUpon>frm_Tri_phieuxetnghiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_XemChiTiet_ToaThuoc.cs">
+    <Compile Include="frm_Tri_xemchitiettoathuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_XemChiTiet_ToaThuoc.Designer.cs">
-      <DependentUpon>frm_XemChiTiet_ToaThuoc.cs</DependentUpon>
+    <Compile Include="frm_Tri_xemchitiettoathuoc.Designer.cs">
+      <DependentUpon>frm_Tri_xemchitiettoathuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,41 +241,35 @@
     <EmbeddedResource Include="frm_Phong_XemLichTruc.resx">
       <DependentUpon>frm_Phong_XemLichTruc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_QuanLyBenhNhan.resx">
-      <DependentUpon>frm_QuanLyBenhNhan.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_QuanLyBenhNhan.resx">
+      <DependentUpon>frm_Tri_QuanLyBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_TimKiem_PhieuKham.resx">
-      <DependentUpon>frm_TimKiem_PhieuKham.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_timkiemphieukham.resx">
+      <DependentUpon>frm_Tri_timkiemphieukham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_TimKiem_ThongTinBenhNhan.resx">
-      <DependentUpon>frm_TimKiem_ThongTinBenhNhan.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_timkiem_BN.resx">
+      <DependentUpon>frm_Tri_timkiem_BN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_TimKiem_ToaThuoc.resx">
-      <DependentUpon>frm_TimKiem_ToaThuoc.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_timkiem_toathuoc.resx">
+      <DependentUpon>frm_Tri_timkiem_toathuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Tri_PhieuKham.resx">
-      <DependentUpon>frm_Tri_PhieuKham.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_Phieukham.resx">
+      <DependentUpon>frm_Tri_Phieukham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Tri_ThanhToan.resx">
-      <DependentUpon>frm_Tri_ThanhToan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Tri_ThongKeBenhNhan.resx">
-      <DependentUpon>frm_Tri_ThongKeBenhNhan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Tri_ThongKePhieuKham.resx">
-      <DependentUpon>frm_Tri_ThongKePhieuKham.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_Thanhtoan.resx">
+      <DependentUpon>frm_Tri_Thanhtoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Tri_ToaThuoc.resx">
       <DependentUpon>frm_Tri_ToaThuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_XemChiTiet_HSBN.resx">
-      <DependentUpon>frm_XemChiTiet_HSBN.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_XemChiTiet_HSBN.resx">
+      <DependentUpon>frm_Tri_XemChiTiet_HSBN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_XemChiTiet_PhieuKham.resx">
-      <DependentUpon>frm_XemChiTiet_PhieuKham.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_phieuxetnghiem.resx">
+      <DependentUpon>frm_Tri_phieuxetnghiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_XemChiTiet_ToaThuoc.resx">
-      <DependentUpon>frm_XemChiTiet_ToaThuoc.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Tri_xemchitiettoathuoc.resx">
+      <DependentUpon>frm_Tri_xemchitiettoathuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -322,6 +305,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{7637e71b-b185-436c-9b66-33c22079e60e}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{a22bd053-a3f0-41f4-85af-cfceeca6b972}</Project>
+      <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
