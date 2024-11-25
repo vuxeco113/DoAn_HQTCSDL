@@ -19,7 +19,7 @@ CREATE TABLE KHOA (
 CREATE TABLE BACSI (
     MaBacSi CHAR(10) PRIMARY KEY, -- Mã Bác Sĩ
     HoTen NVARCHAR(100), -- Họ Tên
-    MaKhoa CHAR(10), -- Khoa
+    MaKhoa CHAR(10), -- Khoa[dbo].[TOATHUOC]
     SoDienThoai NVARCHAR(15), -- Số Điện Thoại
 	SoCaTruc INT DEFAULT 0,
 	MatKhau char(20),
@@ -184,7 +184,31 @@ CREATE TABLE CHITIET_PN_THUOC (
 GO
 
 --Nhập liệu
-insert into CATRUC ('SA', N'Ca Sáng');
+insert into CATRUC values ('SA', N'Ca Sáng');
+insert into CATRUC values ('CH',N'Ca Chiều');
+insert into CATRUC values ('TO', N'Ca Tối');
+insert into CATRUC values ('DE', N'Ca Đêm');
+
+-- Thêm dữ liệu mẫu vào bảng KHOA
+INSERT INTO KHOA (MaKhoa, TenKhoa)
+VALUES 
+    ('K01', N'Khoa Nội Tổng Hợp'),
+    ('K02', N'Khoa Ngoại Tổng Hợp'),
+    ('K03', N'Khoa Nhi'),
+    ('K04', N'Khoa Cấp Cứu'),
+    ('K05', N'Khoa Sản');
+GO
+
+-- Thêm bác sĩ vào bảng BACSI
+INSERT INTO BACSI (MaBacSi, HoTen, MaKhoa, SoDienThoai, MatKhau, ChucVu)
+VALUES 
+    ('BS001', N'Nguyễn Văn A', 'K01', '0909123456', '123456', N'Trưởng Khoa'),
+    ('BS002', N'Lê Thị B', 'K02', '0909765432', '654321', N'Phó Khoa'),
+    ('BS003', N'Trần Văn C', 'K03', '0912123456', 'abc123', N'Bác Sĩ'),
+    ('BS004', N'Phạm Thị D', 'K01', '0912765432', 'def456', N'Bác Sĩ'),
+    ('BS005', N'Hoàng Văn E', 'K02', '0923123456', 'ghi789', N'Bác Sĩ');
+GO
+
 ------------------------------------------------------------------------------------------------------------
 -------------------------------------       TRIGGER      ---------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
@@ -484,37 +508,122 @@ END;
 GO
 
 --// Trigger cập nhật số ca khi thêm lịch trực mới
-CREATE TRIGGER TRG_CAPNHAT_SOCA_ON_INSERT
+CREATE TRIGGER trg_CapNhatSoCaTruc_Them
 ON LICHTRUC
 AFTER INSERT
 AS
 BEGIN
-    DECLARE @MaBacSi CHAR(10);
-    SELECT @MaBacSi = MaBacSi FROM inserted;
-
-    UPDATE BACSI 
-    SET SoCaTruc = SoCaTruc + 1 
-    WHERE MaBacSi = @MaBacSi;
+    -- Cập nhật SoCaTruc khi thêm lịch trực mới
+    UPDATE BACSI
+    SET SoCaTruc = SoCaTruc + 1
+    WHERE MaBacSi IN (SELECT MaBacSi FROM inserted);
 END;
 GO
+INSERT INTO LICHTRUC (MaBacSi, NgayTruc, MaCaTruc)
+VALUES ('BS001', '2024-11-25', 'SA'); -- Thêm ca sáng cho bác sĩ BS01
 
---// Trigger kiểm tra trùng lịch trực
-CREATE TRIGGER TRG_KIEMTRA_TRUNGLICH_TRUC
+GO
+
+
+-- // Trigger xóa ca trực khi xóa lich trực
+CREATE TRIGGER trg_CapNhatSoCaTruc_Xoa
+ON LICHTRUC
+AFTER DELETE
+AS
+BEGIN
+    -- Cập nhật SoCaTruc khi xóa lịch trực
+    UPDATE BACSI
+    SET SoCaTruc = SoCaTruc - 1
+    WHERE MaBacSi IN (SELECT MaBacSi FROM deleted);
+END;
+GO
+DELETE FROM LICHTRUC
+WHERE MaBacSi = 'BS001' AND NgayTruc = '2024-11-25' AND MaCaTruc = 'SA';
+
+
+-- // Trigger kiểm tra trùng lịch
+CREATE TRIGGER TRG_KIEMTRA_TRUNGLICH
 ON LICHTRUC
 INSTEAD OF INSERT
 AS
 BEGIN
+    -- Kiểm tra trùng lịch trực (cùng ngày, cùng bác sĩ, cùng ca)
     IF EXISTS (
-        SELECT 1 
+        SELECT 1
         FROM inserted i
-        JOIN LICHTRUC lt ON i.MaBacSi = lt.MaBacSi AND i.NgayTruc = lt.NgayTruc AND i.MaCaTruc = lt.MaCaTruc
+        JOIN LICHTRUC lt
+        ON i.MaBacSi = lt.MaBacSi 
+           AND i.NgayTruc = lt.NgayTruc 
+           AND i.MaCaTruc = lt.MaCaTruc
     )
     BEGIN
-        RAISERROR('Bác sĩ đã có lịch trực trong ngày.', 16, 1);
+        RAISERROR('Bác sĩ đã có lịch trực trong cùng ca của ngày này.', 16, 1);
         ROLLBACK TRANSACTION;
+        RETURN;
+    END
+
+    -- Chèn dữ liệu nếu không trùng lịch
+    INSERT INTO LICHTRUC (MaBacSi, NgayTruc, MaCaTruc)
+    SELECT MaBacSi, NgayTruc, MaCaTruc FROM inserted;
+END;
+GO
+INSERT INTO LICHTRUC (MaBacSi, NgayTruc, MaCaTruc)
+VALUES ('BS003', '2024-11-25', 'SA'); 
+
+INSERT INTO LICHTRUC (MaBacSi, NgayTruc, MaCaTruc)
+VALUES ('BS003', '2024-11-25', 'SA'); 
+Go
+--// Trigger Giới hạn 2 ca trực / 1 day/ 1 bác sĩ
+CREATE TRIGGER TRG_GIOIHAN_SOCA_TRUC
+ON LICHTRUC
+AFTER INSERT
+AS
+BEGIN
+    -- Kiểm tra nếu có bác sĩ vượt quá 2 ca trực trong một ngày
+    IF EXISTS (
+        SELECT i.MaBacSi, i.NgayTruc
+        FROM LICHTRUC lt
+        JOIN inserted i
+        ON lt.MaBacSi = i.MaBacSi 
+           AND lt.NgayTruc = i.NgayTruc
+        GROUP BY i.MaBacSi, i.NgayTruc
+        HAVING COUNT(lt.MaCaTruc) > 2
+    )
+    BEGIN
+        RAISERROR('Bác sĩ không thể có quá 2 ca trực trong một ngày.', 16, 1);
+        ROLLBACK TRANSACTION;
+        RETURN;
     END
 END;
 GO
+INSERT INTO LICHTRUC (MaBacSi, NgayTruc, MaCaTruc)
+VALUES ('BS002', '2024-11-25', 'CH'); 
+INSERT INTO LICHTRUC (MaBacSi, NgayTruc, MaCaTruc)
+VALUES ('BS002', '2024-11-25', 'TO');
+GO
+
+CREATE TRIGGER trg_KhongXoaBacSiDangCoLich
+ON BACSI
+INSTEAD OF DELETE
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM deleted d
+        JOIN LICHTRUC l ON d.MaBacSi = l.MaBacSi
+    )
+    BEGIN
+        RAISERROR('Không thể xóa bác sĩ đang có lịch trực.', 16, 1);
+        ROLLBACK TRANSACTION;
+        RETURN;
+    END
+
+    DELETE FROM BACSI
+    WHERE MaBacSi IN (SELECT MaBacSi FROM deleted);
+END;
+GO
+
+
 
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
@@ -920,6 +1029,7 @@ BEGIN
     ORDER BY NgayNhapVien;
 END;
 GO
+
 --// Procedure thêm lịch trực cho bác sĩ
 CREATE PROCEDURE PROC_THEMLICHTRUC
     @MaBacSi CHAR(10),
@@ -927,52 +1037,134 @@ CREATE PROCEDURE PROC_THEMLICHTRUC
     @MaCaTruc CHAR(10)
 AS
 BEGIN
-    INSERT INTO LICHTRUC (MaLichTruc, MaBacSi, NgayTruc, MaCaTruc)
-    VALUES (NEWID(), @MaBacSi, @NgayTruc, @MaCaTruc);
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Kiểm tra bác sĩ có tồn tại hay không
+        IF NOT EXISTS (SELECT 1 FROM BACSI WHERE MaBacSi = @MaBacSi)
+        BEGIN
+            RAISERROR('Bác sĩ không tồn tại.', 16, 1);
+            RETURN;
+        END
+
+        -- Kiểm tra ca trực có tồn tại hay không
+        IF NOT EXISTS (SELECT 1 FROM CATRUC WHERE MaCaTruc = @MaCaTruc)
+        BEGIN
+            RAISERROR('Ca trực không tồn tại.', 16, 1);
+            RETURN;
+        END
+
+        -- Kiểm tra xem lịch trực có trùng không
+        IF EXISTS (
+            SELECT 1 FROM LICHTRUC
+            WHERE MaBacSi = @MaBacSi AND NgayTruc = @NgayTruc AND MaCaTruc = @MaCaTruc
+        )
+        BEGIN
+            RAISERROR('Lịch trực đã tồn tại.', 16, 1);
+            RETURN;
+        END
+
+        -- Thêm lịch trực
+        INSERT INTO LICHTRUC (MaBacSi, NgayTruc, MaCaTruc)
+        VALUES (@MaBacSi, @NgayTruc, @MaCaTruc);
+
+        -- Cập nhật số ca trực của bác sĩ
+        UPDATE BACSI
+        SET SoCaTruc = SoCaTruc + 1
+        WHERE MaBacSi = @MaBacSi;
+
+        COMMIT TRANSACTION;
+        PRINT 'Thêm lịch trực thành công.';
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        THROW;
+    END CATCH
 END;
 GO
 
---// Procedure xóa lịch trực theo mã lịch
-CREATE PROCEDURE PROC_XOALICHTRUC
-    @MaLichTruc CHAR(10)
-AS
-BEGIN
-    DELETE FROM LICHTRUC WHERE MaLichTruc = @MaLichTruc;
-END;
-GO
+EXEC PROC_THEMLICHTRUC 
+    @MaBacSi = 'BS002', 
+    @NgayTruc = '2024-12-01', 
+    @MaCaTruc = 'SA';
 
---// Procedure cập nhật ca trực
-CREATE PROCEDURE PROC_CAPNHATLICHTRUC
-    @MaLichTruc CHAR(10),
-    @MaCaTruc CHAR(10)
+--Procedure Phân lịch trực tự động
+CREATE PROCEDURE PROC_PHANLICHTRUCTUDONG
+    @NgayTruc DATE
 AS
 BEGIN
-    UPDATE LICHTRUC SET MaCaTruc = @MaCaTruc WHERE MaLichTruc = @MaLichTruc;
-END;
-GO
+    BEGIN TRY
+        BEGIN TRANSACTION;
 
---// Procedure thêm ca trực mới
-CREATE PROCEDURE PROC_THEMCASTRUC
-    @MaCaTruc CHAR(10),
-    @ThoiGianCa NVARCHAR(50)
-AS
-BEGIN
-    INSERT INTO CATRUC (MaCaTruc, ThoiGianCa) VALUES (@MaCaTruc, @ThoiGianCa);
-END;
-GO
+        -- Lấy danh sách các ca trực trong ngày
+        DECLARE @DanhSachCa TABLE (MaCaTruc CHAR(10));
+        INSERT INTO @DanhSachCa (MaCaTruc)
+        SELECT MaCaTruc FROM CATRUC;
 
---// Procedure lấy lịch trực của bác sĩ theo khoa
-CREATE PROCEDURE PROC_LAYLICHTRUCBY_KHOA
-    @MaKhoa CHAR(10)
-AS
-BEGIN
-    SELECT LT.MaBacSi, BS.HoTen, LT.NgayTruc, CT.ThoiGianCa
-    FROM LICHTRUC LT
-    JOIN BACSI BS ON LT.MaBacSi = BS.MaBacSi
-    JOIN CATRUC CT ON LT.MaCaTruc = CT.MaCaTruc
-    WHERE BS.MaKhoa = @MaKhoa;
+        -- Lặp qua từng ca trực
+        DECLARE @MaCaTruc CHAR(10);
+        DECLARE Ca_Cursor CURSOR FOR SELECT MaCaTruc FROM @DanhSachCa;
+        OPEN Ca_Cursor;
+        FETCH NEXT FROM Ca_Cursor INTO @MaCaTruc;
+
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            -- Lấy bác sĩ có số ca trực ít nhất
+            DECLARE @MaBacSi CHAR(10);
+            SELECT TOP 1 @MaBacSi = MaBacSi
+            FROM BACSI
+            WHERE MaBacSi NOT IN (
+                SELECT MaBacSi FROM LICHTRUC WHERE NgayTruc = @NgayTruc
+            )
+            ORDER BY SoCaTruc ASC;
+
+            -- Kiểm tra xem có bác sĩ đủ điều kiện
+            IF @MaBacSi IS NOT NULL
+            BEGIN
+                -- Thêm lịch trực
+                INSERT INTO LICHTRUC (MaBacSi, NgayTruc, MaCaTruc)
+                VALUES (@MaBacSi, @NgayTruc, @MaCaTruc);
+
+                -- Cập nhật số ca trực của bác sĩ
+                UPDATE BACSI
+                SET SoCaTruc = SoCaTruc + 1
+                WHERE MaBacSi = @MaBacSi;
+            END
+
+            FETCH NEXT FROM Ca_Cursor INTO @MaCaTruc;
+        END;
+
+        CLOSE Ca_Cursor;
+        DEALLOCATE Ca_Cursor;
+
+        COMMIT TRANSACTION;
+        PRINT N'Phân lịch trực tự động thành công.';
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        THROW;
+    END CATCH
 END;
 GO
+EXEC PROC_PHANLICHTRUCTUDONG @NgayTruc = '2024-11-26';
+
+-- Procedure kiểm tra ca trực trống trong ngày
+CREATE PROCEDURE PROC_KIEMTRACATRUCTRONGTRONGNGAY
+    @NgayTruc DATE
+AS
+BEGIN
+    SELECT c.MaCaTruc, c.ThoiGianCa
+    FROM CATRUC c
+    WHERE c.MaCaTruc NOT IN (
+        SELECT lt.MaCaTruc
+        FROM LICHTRUC lt
+        WHERE lt.NgayTruc = @NgayTruc
+    );
+END;
+GO
+EXEC PROC_KIEMTRACATRUCTRONGTRONGNGAY @NgayTruc = '2024-12-01';
+
+
 ------------------------------------------------------------------------------------------------------------
 -------------------------------------       FUNCTION      -------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
@@ -1299,71 +1491,71 @@ BEGIN
 END;
 GO
 
---// Hàm kiểm tra bác sĩ có lịch trực trong ngày
-CREATE FUNCTION FUNC_IS_DOCTOR_ON_SHIFT
-    (@MaBacSi CHAR(10), @Ngay DATE)
-RETURNS BIT
-AS
-BEGIN
-    DECLARE @IsOnShift BIT;
-    SELECT @IsOnShift = CASE WHEN COUNT(*) > 0 THEN 1 ELSE 0 END
-    FROM LICHTRUC WHERE MaBacSi = @MaBacSi AND NgayTruc = @Ngay;
-    RETURN @IsOnShift;
-END;
-GO
-
---// Hàm lấy thời gian ca trực của bác sĩ
-CREATE FUNCTION FUNC_GET_SHIFT_TIME
-    (@MaCaTruc CHAR(10))
-RETURNS NVARCHAR(50)
-AS
-BEGIN
-    DECLARE @ThoiGianCa NVARCHAR(50);
-    SELECT @ThoiGianCa = ThoiGianCa FROM CATRUC WHERE MaCaTruc = @MaCaTruc;
-    RETURN @ThoiGianCa;
-END;
-GO
-
---// Hàm tính tổng số ca trực của bác sĩ trong tuần
-CREATE FUNCTION FUNC_COUNT_DOCTOR_SHIFTS_IN_WEEK
-    (@MaBacSi CHAR(10), @WeekStart DATE, @WeekEnd DATE)
-RETURNS INT
-AS
-BEGIN
-    DECLARE @ShiftCount INT;
-    SELECT @ShiftCount = COUNT(*) 
-    FROM LICHTRUC 
-    WHERE MaBacSi = @MaBacSi AND NgayTruc BETWEEN @WeekStart AND @WeekEnd;
-    RETURN @ShiftCount;
-END;
-GO
-
---// Hàm lấy lịch trực bác sĩ theo ngày
-CREATE FUNCTION FUNC_GET_DOCTOR_SHIFT_BY_DATE
-    (@MaBacSi CHAR(10), @Ngay DATE)
+-- FUNC lấy danh sách lịch trực của bác sĩ trong 1 ngày	
+CREATE FUNCTION FUNC_LAYLICHTRUCCUABACSI
+(
+    @MaBacSi CHAR(10),
+    @NgayTruc DATE
+)
 RETURNS TABLE
 AS
-RETURN
+RETURN 
 (
-    SELECT MaLichTruc, NgayTruc, MaCaTruc
+    SELECT MaCaTruc, NgayTruc
     FROM LICHTRUC
-    WHERE MaBacSi = @MaBacSi AND NgayTruc = @Ngay
+    WHERE MaBacSi = @MaBacSi AND NgayTruc = @NgayTruc
 );
 GO
 
---// Hàm lấy danh sách bác sĩ theo ca trực
-CREATE FUNCTION FUNC_GET_DOCTORS_BY_SHIFT
-    (@MaCaTruc CHAR(10))
+SELECT * 
+FROM dbo.FUNC_LAYLICHTRUCCUABACSI('BS001', '2024-11-26');
+
+-- FUNC lấy danh sách bác sĩ có ít hơn 2 ca trực 1 ngày
+CREATE FUNCTION FUNC_LAYDANHSACHBACSI
+(
+    @NgayTruc DATE
+)
 RETURNS TABLE
 AS
-RETURN
+RETURN 
 (
-    SELECT BS.MaBacSi, BS.HoTen
-    FROM BACSI BS
-    JOIN LICHTRUC LT ON BS.MaBacSi = LT.MaBacSi
-    WHERE LT.MaCaTruc = @MaCaTruc
+    SELECT bs.MaBacSi, bs.HoTen, COUNT(lt.MaCaTruc) AS SoCaTruc
+    FROM BACSI bs
+    LEFT JOIN LICHTRUC lt 
+    ON bs.MaBacSi = lt.MaBacSi AND lt.NgayTruc = @NgayTruc
+    GROUP BY bs.MaBacSi, bs.HoTen
+    HAVING COUNT(lt.MaCaTruc) < 2
 );
 GO
+
+SELECT * 
+FROM dbo.FUNC_LAYDANHSACHBACSI('2024-11-26');
+
+
+--FUNC lấy Ca trực chưa được phân công trong ngày
+CREATE FUNCTION FUNC_LAYCATRUCCHUADUOCPHANCONG_TRONGNGAY
+(
+    @NgayTruc DATE
+)
+RETURNS TABLE
+AS
+RETURN 
+(
+    SELECT ct.MaCaTruc, ct.ThoiGianCa
+    FROM CATRUC ct
+    WHERE NOT EXISTS (
+        SELECT 1 
+        FROM LICHTRUC lt
+        WHERE lt.MaCaTruc = ct.MaCaTruc AND lt.NgayTruc = @NgayTruc
+    )
+);
+GO
+
+SELECT * 
+FROM dbo.FUNC_LAYCATRUCCHUADUOCPHANCONG_TRONGNGAY('2024-11-26');
+
+
+
 ------------------------------------------------------------------------------------------------------------
 -------------------------------------       CURSOR      -------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
@@ -1571,78 +1763,82 @@ DEALLOCATE CURS_DANH_SACH_BAC_SI;
 
 ------------------------------------------------------------------------------------------------------------
 
---// Con trỏ để kiểm tra lịch trực trùng lặp cho các bác sĩ
-DECLARE @NgayTruc5 DATE,
-		@MaBacSi5 CHAR(10)
-DECLARE CURS_CHECK_LICH_TRUC CURSOR FOR
-SELECT MaBacSi, NgayTruc FROM LICHTRUC;
+DECLARE @MaBacSi1 CHAR(10), 
+        @HoTenBacSi1 NVARCHAR(100),
+        @NgayTruc1 DATE,
+        @MaCaTruc1 NVARCHAR(50);
 
-OPEN CURS_CHECK_LICH_TRUC;
-
-FETCH NEXT FROM CURS_CHECK_LICH_TRUC INTO @MaBacSi5, @NgayTruc5;
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    DECLARE @DuplicateCount INT;
-    SET @DuplicateCount = (SELECT COUNT(*)
-                           FROM LICHTRUC
-                           WHERE MaBacSi = @MaBacSi5 AND NgayTruc = @NgayTruc5);
-
-    IF @DuplicateCount > 1
-    BEGIN
-        PRINT 'Lịch trực bị trùng cho bác sĩ: ' + @MaBacSi5 + ' vào ngày: ' + CONVERT(VARCHAR, @NgayTruc5);
-    END
-
-    FETCH NEXT FROM CURS_CHECK_LICH_TRUC INTO @MaBacSi5, @NgayTruc5;
-END;
-
-CLOSE CURS_CHECK_LICH_TRUC;
-DEALLOCATE CURS_CHECK_LICH_TRUC;
-
-------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------------------------------------
-
---// Con trỏ để phân chia ca trực cho bác sĩ
-DECLARE @NgayTruc6 DATE, 
-		@CaTruc6 NVARCHAR(50),
-		@MaBacSi6 CHAR(10)
-DECLARE CURS_CHIA_CA_TRUC CURSOR FOR
-SELECT MaBacSi, NgayTruc, MaCaTruc FROM LICHTRUC;
-
-OPEN CURS_CHIA_CA_TRUC;
-
-FETCH NEXT FROM CURS_CHIA_CA_TRUC INTO @MaBacSi6, @NgayTruc6, @CaTruc6;
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    PRINT 'Bác sĩ: ' + @MaBacSi6 + ', Ngày trực: ' + CONVERT(VARCHAR, @NgayTruc6) + ', Ca trực: ' + @CaTruc6;
-    FETCH NEXT FROM CURS_CHIA_CA_TRUC INTO @MaBacSi6, @NgayTruc6, @CaTruc6;
-END;
-
-CLOSE CURS_CHIA_CA_TRUC;
-DEALLOCATE CURS_CHIA_CA_TRUC;
-
-------------------------------------------------------------------------------------------------------------
-
---// Con trỏ để lấy thông tin ca trực theo bác sĩ
-DECLARE @MaBacSi7 CHAR(10), 
-        @HoTenBacSi7 NVARCHAR(100),
-        @NgayTruc7 DATE,
-        @MaCaTruc7 NVARCHAR(50);
-DECLARE CURS_THONG_TIN_CA_TRUC CURSOR FOR
+DECLARE CURS_LICH_TRUC_BAC_SI CURSOR FOR
 SELECT b.MaBacSi, b.HoTen, l.NgayTruc, l.MaCaTruc
 FROM BACSI b
-JOIN LICHTRUC l ON b.MaBacSi = l.MaBacSi;
+JOIN LICHTRUC l ON b.MaBacSi = l.MaBacSi
+WHERE l.NgayTruc BETWEEN '2024-11-01' AND '2024-11-30';
 
-OPEN CURS_THONG_TIN_CA_TRUC;
+OPEN CURS_LICH_TRUC_BAC_SI;
 
-FETCH NEXT FROM CURS_THONG_TIN_CA_TRUC INTO @MaBacSi7, @HoTenBacSi7, @NgayTruc7, @MaCaTruc7;
+FETCH NEXT FROM CURS_LICH_TRUC_BAC_SI INTO @MaBacSi1, @HoTenBacSi1, @NgayTruc1, @MaCaTruc1;
 WHILE @@FETCH_STATUS = 0
 BEGIN
-    PRINT 'Bác sĩ: ' + @HoTenBacSi7 + ', Mã bác sĩ: ' + @MaBacSi7 + ', Ngày trực: ' + CONVERT(VARCHAR, @NgayTruc7) + ', Ca trực: ' + @MaCaTruc7;
-    FETCH NEXT FROM CURS_THONG_TIN_CA_TRUC INTO @MaBacSi7, @HoTenBacSi7, @NgayTruc7, @MaCaTruc7;
+    PRINT 'Bác sĩ: ' + @HoTenBacSi1 + ', Mã bác sĩ: ' + @MaBacSi1 + ', Ngày trực: ' + CONVERT(VARCHAR, @NgayTruc1) + ', Ca trực: ' + @MaCaTruc1;
+    FETCH NEXT FROM CURS_LICH_TRUC_BAC_SI INTO @MaBacSi1, @HoTenBacSi1, @NgayTruc1, @MaCaTruc1;
 END;
 
-CLOSE CURS_THONG_TIN_CA_TRUC;
-DEALLOCATE CURS_THONG_TIN_CA_TRUC;
+CLOSE CURS_LICH_TRUC_BAC_SI;
+DEALLOCATE CURS_LICH_TRUC_BAC_SI;
+
+------------------------------------------------------------------------------------------------------------
+-- Cursor Lấy danh sách lịch trực bác sĩ trong 1 khoảng ngày
+DECLARE @MaBacSi10 CHAR(10), 
+        @HoTenBacSi10 NVARCHAR(100),
+        @NgayTruc10 DATE,
+        @MaCaTruc10 NVARCHAR(50);
+
+DECLARE CURS_LICH_TRUC_BAC_SI CURSOR FOR
+SELECT b.MaBacSi, b.HoTen, l.NgayTruc, l.MaCaTruc
+FROM BACSI b
+JOIN LICHTRUC l ON b.MaBacSi = l.MaBacSi
+WHERE l.NgayTruc BETWEEN '2024-11-01' AND '2024-11-30';
+
+OPEN CURS_LICH_TRUC_BAC_SI;
+
+FETCH NEXT FROM CURS_LICH_TRUC_BAC_SI INTO @MaBacSi10, @HoTenBacSi10, @NgayTruc10, @MaCaTruc10;
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    PRINT 'Bác sĩ: ' + @HoTenBacSi1 + ', Mã bác sĩ: ' + @MaBacSi1 + ', Ngày trực: ' + CONVERT(VARCHAR, @NgayTruc1) + ', Ca trực: ' + @MaCaTruc1;
+    FETCH NEXT FROM CURS_LICH_TRUC_BAC_SI INTO @MaBacSi1, @HoTenBacSi1, @NgayTruc1, @MaCaTruc1;
+END;
+
+CLOSE CURS_LICH_TRUC_BAC_SI;
+DEALLOCATE CURS_LICH_TRUC_BAC_SI;
+
+------------------------------------------------------------------------------------------------------------
+DECLARE @MaBacSi11 CHAR(10), 
+        @HoTenBacSi11 NVARCHAR(100),
+        @NgayTruc11 DATE,
+        @MaCaTruc11 NVARCHAR(50);
+
+DECLARE CURS_BAC_SI_CUNG_CA CURSOR FOR
+SELECT b.MaBacSi, b.HoTen, l.NgayTruc, l.MaCaTruc
+FROM BACSI b
+JOIN LICHTRUC l ON b.MaBacSi = l.MaBacSi
+WHERE l.NgayTruc = '2024-11-25' AND l.MaCaTruc = 'CA01';
+
+OPEN CURS_BAC_SI_CUNG_CA;
+
+FETCH NEXT FROM CURS_BAC_SI_CUNG_CA INTO @MaBacSi2, @HoTenBacSi2, @NgayTruc2, @MaCaTruc2;
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    PRINT 'Bác sĩ: ' + @HoTenBacSi11 + ', Mã bác sĩ: ' + @MaBacSi11 + ', Ngày trực: ' + CONVERT(VARCHAR, @NgayTruc11) + ', Ca trực: ' + @MaCaTruc11;
+    FETCH NEXT FROM CURS_BAC_SI_CUNG_CA INTO @MaBacSi11, @HoTenBacSi11, @NgayTruc11, @MaCaTruc11;
+END;
+
+CLOSE CURS_BAC_SI_CUNG_CA;
+DEALLOCATE CURS_BAC_SI_CUNG_CA;
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+
 
 ------------------------------------------------------------------------------------------------------------

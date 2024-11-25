@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frm_Phong_ChiaCa : Form
+    public partial class frm_Phong_QuanLyBacSi : Form
     {
-        public frm_Phong_ChiaCa()
+        public frm_Phong_QuanLyBacSi()
         {
             InitializeComponent();
-
         }
-
     }
 }

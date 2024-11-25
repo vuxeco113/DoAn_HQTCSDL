@@ -166,12 +166,6 @@ namespace GUI
             label_top.Text = "Chia Lịch Trực";
         }
 
-        private void chiaCaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new frm_Phong_ChiaCa());
-            label_top.Text = "Ca Trực";
-        }
-
         private void hồSơBệnhÁnToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //OpenChildForm(new frm_Duy_HoSoBenhAn());
@@ -206,6 +200,12 @@ namespace GUI
         {
             //OpenChildForm(new frm_Nguyen_KiemTraBHYT());
             //label_top.Text = "Kiểm Tra BHYT";
+        }
+
+        private void danhSáchBácSĩToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_Phong_QuanLyBacSi());
+            label_top.Text = "Danh sách Bác sĩ";
         }
     }
 }

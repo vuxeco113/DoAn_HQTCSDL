@@ -61,7 +61,6 @@ D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_N
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Nguyen_LichSuNhapVien.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Nguyen_NhapVien.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Nguyen_XuatVien.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_ChiaCa.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_LichTruc.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_XemLichTruc.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_QuanLyBenhNhan.resources
@@ -82,3 +81,4 @@ D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.cspro
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.exe
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.pdb
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_QuanLyBacSi.resources
