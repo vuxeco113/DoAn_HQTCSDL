@@ -45,6 +45,7 @@
     <Compile Include="CA_TRUC_BLL.cs" />
     <Compile Include="CHITIET_PN_THUOC_BLL.cs" />
     <Compile Include="CHI_TIET_TOA_THUOC_BLL.cs" />
+    <Compile Include="HO_SO_BENH_AN_BLL.cs" />
     <Compile Include="KHOA_BLL.cs" />
     <Compile Include="LICH_TRUC_BLL.cs" />
     <Compile Include="LUUKHO_BLL.cs" />

@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\DATABASE\\PROJECT_QLBV\\DoAn_HQTCSDL\\DoAnHQTCSDL\\",
+  "WorkspaceRootPath": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|d:\\database\\project_qlbv\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\bao duy\\desktop\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frm_duy_hosobenhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frm_duy_hosobenhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frm_duy_hosobenhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frm_duy_hosobenhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frm_duy_timkiemhosobenhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frm_duy_timkiemhosobenhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frm_duy_timkiemhosobenhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frm_duy_timkiemhosobenhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +31,49 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "D:\\DATABASE\\PROJECT_QLBV\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
-              "RelativeDocumentMoniker": "GUI\\frmMain.cs",
-              "ToolTip": "D:\\DATABASE\\PROJECT_QLBV\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
-              "RelativeToolTip": "GUI\\frmMain.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAADwvxIAAAA8AAAAAAAAAA==",
+              "Title": "frm_Duy_HoSoBenhAn.cs",
+              "DocumentMoniker": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Duy_HoSoBenhAn.cs",
+              "RelativeDocumentMoniker": "GUI\\frm_Duy_HoSoBenhAn.cs",
+              "ToolTip": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Duy_HoSoBenhAn.cs",
+              "RelativeToolTip": "GUI\\frm_Duy_HoSoBenhAn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T00:40:52.723Z",
+              "WhenOpened": "2024-11-27T14:22:38.485Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frm_Duy_HoSoBenhAn.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Duy_HoSoBenhAn.cs",
+              "RelativeDocumentMoniker": "GUI\\frm_Duy_HoSoBenhAn.cs",
+              "ToolTip": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Duy_HoSoBenhAn.cs [Design]",
+              "RelativeToolTip": "GUI\\frm_Duy_HoSoBenhAn.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:39:20.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frm_Duy_TimKiemHoSoBenhAn.cs",
+              "DocumentMoniker": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Duy_TimKiemHoSoBenhAn.cs",
+              "RelativeDocumentMoniker": "GUI\\frm_Duy_TimKiemHoSoBenhAn.cs",
+              "ToolTip": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Duy_TimKiemHoSoBenhAn.cs",
+              "RelativeToolTip": "GUI\\frm_Duy_TimKiemHoSoBenhAn.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAYwK4AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T11:05:00.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frm_Duy_TimKiemHoSoBenhAn.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Duy_TimKiemHoSoBenhAn.cs",
+              "RelativeDocumentMoniker": "GUI\\frm_Duy_TimKiemHoSoBenhAn.cs",
+              "ToolTip": "C:\\Users\\Bao Duy\\Desktop\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Duy_TimKiemHoSoBenhAn.cs [Design]",
+              "RelativeToolTip": "GUI\\frm_Duy_TimKiemHoSoBenhAn.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T13:56:45.454Z"
             }
           ]
         }

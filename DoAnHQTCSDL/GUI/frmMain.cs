@@ -155,14 +155,14 @@ namespace GUI
 
         private void hồSơBệnhÁnToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Duy_HoSoBenhAn());
-            //label_top.Text = "Hồ Sơ Bệnh Nhân";
+            OpenChildForm(new frm_Duy_HoSoBenhAn());
+            label_top.Text = "Hồ Sơ Bệnh Nhân";
         }
 
         private void tìmKiếmHồSơBệnhÁnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Duy_TimKiemHoSoBenhAn());
-            //label_top.Text = "Tìm Kiếm Hồ Sơ Bệnh Nhân";
+            OpenChildForm(new frm_Duy_TimKiemHoSoBenhAn());
+            label_top.Text = "Tìm Kiếm Hồ Sơ Bệnh Nhân";
         }
 
         private void nhậpViệnToolStripMenuItem_Click(object sender, EventArgs e)

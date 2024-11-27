@@ -45,6 +45,7 @@
     <Compile Include="CA_TRUC_DTO.cs" />
     <Compile Include="CHITIET_PN_THUOC_DTO.cs" />
     <Compile Include="CHI_TIET_TOA_THUOC_DTO.cs" />
+    <Compile Include="HO_SO_BENH_AN_DTO.cs" />
     <Compile Include="KHOA_DTO.cs" />
     <Compile Include="LICH_TRUC_DTO.cs" />
     <Compile Include="LUUKHO_DTO.cs" />

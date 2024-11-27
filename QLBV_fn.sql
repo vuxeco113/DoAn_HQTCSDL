@@ -239,6 +239,20 @@ CREATE TABLE HOSOBENHAN (
     FOREIGN KEY (MaBacSi) REFERENCES BACSI(MaBacSi) -- Khóa Ngoại
 );
 GO
+
+INSERT INTO HOSOBENHAN (MaHoSo, MaBenhNhan, NgayLapHoSo, MaBacSi, NoiDungHoSo)
+VALUES
+    ('HS001', 'BN00000001', '2024-11-01', 'B002', N'Lập hồ sơ điều trị viêm họng cấp'),
+    ('HS002', 'BN00000001', '2024-11-02', 'B003', N'Lập hồ sơ điều trị cảm cúm'),
+    ('HS003', 'BN00000003', '2024-11-03', 'B004', N'Lập hồ sơ điều trị đau bụng'),
+    ('HS004', 'BN00000004', '2024-11-04', 'B005', N'Lập hồ sơ điều trị viêm phổi'),
+    ('HS005', 'BN00000005', '2024-11-05', 'B006', N'Lập hồ sơ điều trị viêm dạ dày'),
+    ('HS006', 'BN00000006', '2024-11-06', 'B007', N'Lập hồ sơ điều trị chấn thương đầu gối'),
+    ('HS007', 'BN00000008', '2024-11-07', 'B008', N'Lập hồ sơ điều trị viêm gan'),
+    ('HS008', 'BN00000008', '2024-11-08', 'B009', N'Lập hồ sơ khám sức khỏe định kỳ'),
+    ('HS009', 'BN00000005', '2024-01-15', 'B002', N'Lập hồ sơ nhập viện viêm phổi cấp'),
+    ('HS010', 'BN00000001', '2024-01-10', 'B001', N'Lập hồ sơ nhập viện cảm cúm nặng');
+
 CREATE TABLE CATRUC (
     MaCaTruc CHAR(10) PRIMARY KEY, -- Mã Ca Trực
     ThoiGianCa NVARCHAR(50) -- Thời Gian Ca: 'Ca Sáng', 'Ca Chiều', 'Ca Tối'
@@ -473,7 +487,7 @@ BEGIN
 END;
 GO
 
---// Trigger kiểm tra khi thêm dữ liệu vào bảng HOSOBENHAN thì NgayLapHoSo là ngày hiện hành
+--// Trigger kiểm tra khi thêm dữ liệu vào bảng HOSOBENHAN thì NgayLapHoSo là ngày hiện hành (Bảo Duy)
 CREATE TRIGGER TRG_CHECK_NGAY_LAP_HOSO
 ON HOSOBENHAN
 AFTER INSERT
@@ -495,7 +509,7 @@ BEGIN
 END;
 GO
 
---// Trigger kiểm tra khi thêm HOSOBENHAN thì bệnh nhân phải tồn tại
+--// Trigger kiểm tra khi thêm HOSOBENHAN thì bệnh nhân phải tồn tại (Bảo Duy)
 CREATE TRIGGER TRG_CHECK_MABN_TONTAI
 ON HOSOBENHAN
 AFTER INSERT
@@ -518,7 +532,7 @@ BEGIN
 END;
 GO
 
---// Trigger kiểm tra khi thêm HOSOBENHAN thì bác sĩ phải tồn tại
+--// Trigger kiểm tra khi thêm HOSOBENHAN thì bác sĩ phải tồn tại (Bảo Duy)
 CREATE TRIGGER TRG_CHECK_MABS_TONTAI
 ON HOSOBENHAN
 AFTER INSERT
@@ -957,7 +971,7 @@ END;
 GO
 
 
---// Procedure thêm hồ sơ bệnh án
+--// Procedure thêm hồ sơ bệnh án (Bảo Duy)
 CREATE PROCEDURE PROC_THEMHOSOBENHAN
     @MaHoSo CHAR(10),
     @MaBenhNhan CHAR(10),
@@ -979,7 +993,7 @@ BEGIN
 END;
 GO
 
---// Procedure cập nhật hồ sơ bệnh án
+--// Procedure cập nhật hồ sơ bệnh án (Bảo Duy)
 CREATE PROCEDURE PROC_CAPNHATHOSOBENHAN
     @MaHoSo CHAR(10),
     @MaBenhNhan CHAR(10),
@@ -993,7 +1007,7 @@ BEGIN
 END;
 GO
 
---// Procedure xóa hồ sơ bệnh án
+--// Procedure xóa hồ sơ bệnh án (Bảo Duy)
 CREATE PROCEDURE PROC_XOAHOSOBENHAN
     @MaHoSo CHAR(10)
 AS
@@ -1002,7 +1016,7 @@ BEGIN
 END;
 GO
 
---// Procedure xuất danh sách hồ sơ bệnh án của bệnh nhân
+--// Procedure xuất danh sách hồ sơ bệnh án của bệnh nhân (Bảo Duy)
 CREATE PROCEDURE PROC_LAYDANHSACHHOSOBENHAN
     @MaBenhNhan CHAR(10)
 AS
@@ -1011,7 +1025,7 @@ BEGIN
 END;
 GO
 
---// Procedure đếm số hồ sơ của bệnh nhân
+--// Procedure đếm số hồ sơ của bệnh nhân (Bảo Duy)
 CREATE PROCEDURE PROC_DEMHOSOBENHAN
     @MaBenhNhan CHAR(10),
     @SoHoSo INT OUTPUT
@@ -1021,7 +1035,7 @@ BEGIN
 END;
 GO
 
---// Procedure xuất hồ sơ gần nhất
+--// Procedure xuất hồ sơ gần nhất (Bảo Duy)
 CREATE PROCEDURE PROC_LAYHOSOGANNHAT
     @MaBenhNhan CHAR(10)
 AS
@@ -1032,7 +1046,7 @@ BEGIN
 END;
 GO
 
---// Procedure xuất danh sách hồ sơ theo ngày
+--// Procedure xuất danh sách hồ sơ theo ngày (Bảo Duy)
 CREATE PROCEDURE PROC_LAYDANHSACHHOSOTHEONGAY
     @NgayLapHoSo DATE
 AS
@@ -1041,7 +1055,7 @@ BEGIN
 END;
 GO
 
---// Procedure thống kê số hồ sơ theo bác sĩ
+--// Procedure thống kê số hồ sơ theo bác sĩ (Bảo Duy)
 CREATE PROCEDURE PROC_THONGKEHOSOTHEOBACSI
 AS
 BEGIN
@@ -1478,7 +1492,18 @@ BEGIN
 END;
 GO
 
---// Hàm xuất nội dung hồ sơ
+--// Hàm xuất hồ sơ theo mã hồ sơ (Bảo Duy)
+CREATE FUNCTION FUNC_LAY_HO_SO_THEO_MA_HO_SO(@MaHoSo CHAR(10))
+RETURNS TABLE
+AS
+RETURN (
+    SELECT * FROM HOSOBENHAN 
+    WHERE MaHoSo = @MaHoSo
+);
+GO
+
+
+--// Hàm xuất nội dung hồ sơ (Bảo Duy)
 CREATE FUNCTION FUNC_LAY_NOI_DUNG_HO_SO(@MaHoSo CHAR(10))
 RETURNS NVARCHAR(255)
 AS
@@ -1489,7 +1514,7 @@ BEGIN
 END;
 GO
 
---// Hàm tính tổng số hồ sơ
+--// Hàm tính tổng số hồ sơ (Bảo Duy)
 CREATE FUNCTION FUNC_LAY_TONG_HO_SO()
 RETURNS INT
 AS
@@ -1500,23 +1525,23 @@ BEGIN
 END;
 GO
 
---// Hàm xuất hồ sơ trong khoảng thời gian
-CREATE FUNCTION FUNC_LAY_HO_SO_BENH_AN_THEO_KHOANG_THOI_GIAN(@MaBenhNhan CHAR(10), @TuNgay DATE, @DenNgay DATE)
+--// Hàm xuất hồ sơ trong khoảng thời gian (Bảo Duy)
+CREATE FUNCTION FUNC_LAY_HO_SO_BENH_AN_THEO_KHOANG_THOI_GIAN(@TuNgay DATE, @DenNgay DATE)
 RETURNS TABLE
 AS
 RETURN (
     SELECT * FROM HOSOBENHAN 
-    WHERE MaBenhNhan = @MaBenhNhan AND NgayLapHoSo BETWEEN @TuNgay AND @DenNgay
+    WHERE NgayLapHoSo BETWEEN @TuNgay AND @DenNgay
 );
 GO
 
---// Hàm xuất danh sách hồ sơ có cùng bác sĩ
-CREATE FUNCTION FUNC_KIEM_TRA_HO_SO_CUNG_BAC_SI(@MaBenhNhan CHAR(10), @MaBacSi CHAR(10))
+--// Hàm xuất danh sách hồ sơ có cùng bác sĩ (Bảo Duy)
+CREATE FUNCTION FUNC_KIEM_TRA_HO_SO_CUNG_BAC_SI(@MaBacSi CHAR(10))
 RETURNS TABLE
 AS
 RETURN (
     SELECT * FROM HOSOBENHAN 
-    WHERE MaBenhNhan = @MaBenhNhan AND MaBacSi = @MaBacSi
+    WHERE MaBacSi = @MaBacSi
 );
 GO
 
@@ -1724,7 +1749,7 @@ GO
 -------------------------------------       CURSOR      -------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
--- Xuất hồ sơ và thông tin bác sĩ
+-- Xuất hồ sơ và thông tin bác sĩ (Bảo Duy)
 DECLARE CURS_HO_SO_BAC_SI CURSOR FOR
 SELECT h.*, b.HoTen AS TenBacSi
 FROM HOSOBENHAN h
@@ -1736,7 +1761,7 @@ FETCH NEXT FROM CURS_HO_SO_BAC_SI;
 CLOSE CURS_HO_SO_BAC_SI;
 DEALLOCATE CURS_HO_SO_BAC_SI;
 
--- Xuất hồ sơ và thông tin bệnh nhân
+-- Xuất hồ sơ và thông tin bệnh nhân (Bảo Duy)
 DECLARE CURS_HO_SO_BENH_NHAN CURSOR FOR
 SELECT h.*, b.HoTen AS TenBenhNhan
 FROM HOSOBENHAN h
