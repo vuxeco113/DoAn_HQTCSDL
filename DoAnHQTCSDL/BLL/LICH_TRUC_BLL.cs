@@ -2,6 +2,8 @@
 using DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace BLL
 {
@@ -10,77 +12,200 @@ namespace BLL
         private LICH_TRUC_DAL lichTrucDAL = new LICH_TRUC_DAL();
 
         // Lấy danh sách tất cả lịch trực
-        public List<LICH_TRUC_DTO> LayDanhSachLichTruc()
+        public DataTable GetAllLichTruc()
         {
-            return lichTrucDAL.GetAll();
+            return lichTrucDAL.GetAllLichTruc();
         }
 
         // Thêm một lịch trực mới
-        public bool ThemLichTruc(LICH_TRUC_DTO lichTruc)
+        public bool AddLichTruc(LICH_TRUC_DTO lichTruc)
         {
-            // Kiểm tra dữ liệu trước khi thêm
-            if (string.IsNullOrEmpty(lichTruc.MaLichTruc) ||
-                string.IsNullOrEmpty(lichTruc.MaBacSi) ||
-                string.IsNullOrEmpty(lichTruc.MaCaTruc))
+            try
             {
-                return false; // Dữ liệu không hợp lệ
+                return lichTrucDAL.ThemLichTruc(lichTruc);
+            }
+            catch (ArgumentException ex)
+            {
+                // Xử lý lỗi đặc biệt, chẳng hạn như trùng khóa chính
+                throw new Exception("Lỗi nghiệp vụ: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý các lỗi chung
+                throw new Exception("Lỗi không xác định: " + ex.Message);
             }
 
-            // Gọi DAL để thêm
-            return lichTrucDAL.ThemLichTruc(lichTruc);
         }
 
-        // Sửa thông tin lịch trực
-        public bool SuaLichTruc(LICH_TRUC_DTO lichTruc)
+        public bool UpdateLichTruc(LICH_TRUC_DTO lichTruc)
         {
-            // Kiểm tra dữ liệu trước khi sửa
-            if (string.IsNullOrEmpty(lichTruc.MaLichTruc))
+            try
             {
-                return false; // Không có mã lịch trực để sửa
+                return lichTrucDAL.SuaLichTruc(lichTruc);
+            }
+            catch (SqlException ex)
+            {
+                // Xử lý ngoại lệ SQL
+                throw new Exception("Lỗi SQL: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý các lỗi khác
+                throw new Exception("Lỗi không xác định: " + ex.Message, ex);
             }
 
-            // Gọi DAL để sửa
-            return lichTrucDAL.SuaLichTruc(lichTruc);
         }
 
-        // Xóa một lịch trực
-        public bool XoaLichTruc(string maLichTruc)
+        public bool DeleteLichTruc(string maBacSi, DateTime ngayTruc, string maCaTruc)
         {
-            // Kiểm tra dữ liệu trước khi xóa
-            if (string.IsNullOrEmpty(maLichTruc))
+            try
             {
-                return false; // Không có mã lịch trực để xóa
+                return lichTrucDAL.XoaLichTruc(maBacSi, ngayTruc, maCaTruc);
+            }
+            catch (SqlException ex)
+            {
+                // Xử lý ngoại lệ SQL
+                throw new Exception("Lỗi SQL: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý các lỗi khác
+                throw new Exception("Lỗi không xác định: " + ex.Message, ex);
             }
 
-            // Tạo DTO với mã lịch trực cần xóa
-            LICH_TRUC_DTO lichTruc = new LICH_TRUC_DTO
-            {
-                MaLichTruc = maLichTruc
-            };
-
-            // Gọi DAL để xóa
-            return lichTrucDAL.XoaLichTruc(lichTruc);
         }
-
-        // Đếm số lịch trực trong ngày
-        public int DemSoLichTrongNgay(DateTime ngay)
+        public DataTable FilterByName(string name)
         {
-            return lichTrucDAL.DemSoMaLichTrongNgay(ngay);
-        }
-
-        // Kiểm tra lịch trực của bác sĩ trong ngày
-        public bool KiemTraLichTrucBacSi(string maBacSi, DateTime ngay)
-        {
-            List<LICH_TRUC_DTO> danhSach = lichTrucDAL.GetAll();
-
-            foreach (var lich in danhSach)
+            try
             {
-                if (lich.MaBacSi == maBacSi && lich.NgayTruc.Date == ngay.Date)
-                {
-                    return true; // Bác sĩ này đã có lịch trực trong ngày
-                }
+                return lichTrucDAL.FilterByName(name);
             }
-            return false; // Không có lịch trực cho bác sĩ này trong ngày
+            catch (SqlException ex)
+            {
+                throw new Exception("Lỗi SQL: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi không xác định: " + ex.Message, ex);
+            }
         }
+
+        public DataTable FilterByDate(DateTime date)
+        {
+            try
+            {
+                return lichTrucDAL.FilterByDate(date);
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Lỗi SQL: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi không xác định: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable FilterByDateAndShift(DateTime date, string shift)
+        {
+            try
+            {
+                return lichTrucDAL.FilterByDateAndShift(date, shift);
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Lỗi SQL: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi không xác định: " + ex.Message, ex);
+            }
+        }
+
+        public void PhanLichTrucTuDong(DateTime ngayTruc)
+        {
+            try
+            {
+                lichTrucDAL.PhanLichTrucTuDong(ngayTruc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi phân lịch trực tự động: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable KiemTraCaTrucTrongTrongNgay(DateTime ngayTruc)
+        {
+            try
+            {
+                return lichTrucDAL.KiemTraCaTrucTrongTrongNgay(ngayTruc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi kiểm tra ca trực trống: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LayLichTrucCuaBacSi(string maBacSi, DateTime ngayTruc)
+        {
+            try
+            {
+                return lichTrucDAL.LayLichTrucCuaBacSi(maBacSi, ngayTruc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi lấy lịch trực của bác sĩ: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LayDanhSachBacSi(DateTime ngayTruc)
+        {
+            try
+            {
+                return lichTrucDAL.LayDanhSachBacSi(ngayTruc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi lấy danh sách bác sĩ: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LayCaTrucChuaDuocPhanCongTrongNgay(DateTime ngayTruc)
+        {
+            try
+            {
+                return lichTrucDAL.LayCaTrucChuaDuocPhanCongTrongNgay(ngayTruc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi lấy ca trực chưa được phân công trong ngày: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LayDanhSachLichTruc(DateTime startDate, DateTime endDate)
+        {
+            try
+            {
+                return lichTrucDAL.LayDanhSachLichTruc(startDate, endDate);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi lấy danh sách lịch trực bác sĩ: " + ex.Message, ex);
+            }
+        }
+
+        public DataTable LayBacSiCungCa(DateTime ngayTruc, string maCaTruc)
+        {
+            try
+            {
+                return lichTrucDAL.LayBacSiCungCa(ngayTruc, maCaTruc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi lấy bác sĩ cùng ca trực: " + ex.Message, ex);
+            }
+        }
+
+
     }
 }

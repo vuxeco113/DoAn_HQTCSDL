@@ -64,18 +64,9 @@ D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_N
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_ChiaCa.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_LichTruc.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_XemLichTruc.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_QuanLyBenhNhan.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_TimKiem_PhieuKham.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_TimKiem_ThongTinBenhNhan.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_TimKiem_ToaThuoc.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_PhieuKham.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_ThanhToan.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_ThongKeBenhNhan.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_ThongKePhieuKham.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_ToaThuoc.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_XemChiTiet_HSBN.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_XemChiTiet_PhieuKham.resources
-D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_XemChiTiet_ToaThuoc.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.Properties.Resources.resources
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
@@ -124,3 +115,12 @@ D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_timk
 D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_phieuxetnghiem.resources
 D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_timkiem_toathuoc.resources
 D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_xemchitiettoathuoc.resources
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\Utility.dll
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\Utility.pdb
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_QuanLyBenhNhan.resources
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_timkiemphieukham.resources
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_timkiem_BN.resources
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_timkiem_toathuoc.resources
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_XemChiTiet_HSBN.resources
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_phieuxetnghiem.resources
+D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_xemchitiettoathuoc.resources
