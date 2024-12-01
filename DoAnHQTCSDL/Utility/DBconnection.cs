@@ -12,7 +12,7 @@ namespace Utility
     public class DBconnection
     {
         SqlConnection conn;
-        string strconnect = ("Data Source=MTRI-PC\\SQLEXPRESS;Initial Catalog=QLBV;Integrated Security=True ");
+        string strconnect = ("Data Source=DESKTOP-JARJMT7\\SA;Initial Catalog=QLBV;Integrated Security=True ");
         public DBconnection()
         {
             conn = new SqlConnection(strconnect);
@@ -949,6 +949,88 @@ namespace Utility
                 closeconnect(); // Đóng kết nối
             }
         }
+
+        // Phương thức ExecuteScalar (dành cho các câu lệnh trả về một giá trị)
+        public object ExecuteScalar(string query, List<SqlParameter> parameters = null)
+        {
+            try
+            {
+                // Mở kết nối
+                openconnect();
+
+                // Tạo câu lệnh SQL
+                SqlCommand command = new SqlCommand(query, conn);
+
+                // Thêm các tham số (nếu có)
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters.ToArray());
+                }
+
+                // Thực thi câu lệnh SQL và trả về một giá trị đơn
+                return command.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu có
+                Console.WriteLine("Lỗi khi thực thi câu lệnh: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                // Đóng kết nối sau khi thực hiện xong
+                closeconnect();
+            }
+        }
+
+        // Phương thức ExecuteQuery (dành cho các câu lệnh không trả về giá trị)
+        public void ExecuteQuery(string query, List<SqlParameter> parameters = null)
+        {
+            try
+            {
+                // Mở kết nối
+                openconnect();
+
+                // Tạo câu lệnh SQL
+                SqlCommand command = new SqlCommand(query, conn);
+
+                // Thêm các tham số (nếu có)
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters.ToArray());
+                }
+
+                // Thực thi câu lệnh SQL
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu có
+                Console.WriteLine("Lỗi khi thực thi câu lệnh: " + ex.Message);
+            }
+            finally
+            {
+                // Đóng kết nối sau khi thực hiện xong
+                closeconnect();
+            }
+        }
+
+        public DataTable GetDataTable(string sql, List<SqlParameter> parameters)
+        {
+            DataTable dt = new DataTable();
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                if (parameters != null)
+                {
+                    cmd.Parameters.AddRange(parameters.ToArray());
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+            }
+            return dt;
+        }
+
 
 
 

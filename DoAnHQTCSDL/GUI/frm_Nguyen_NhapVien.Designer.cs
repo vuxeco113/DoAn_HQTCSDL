@@ -31,6 +31,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_MaBN = new System.Windows.Forms.ComboBox();
             this.cmb_MaBacSi = new System.Windows.Forms.ComboBox();
             this.txt_MaPhong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,8 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_MaBenhNhan = new System.Windows.Forms.TextBox();
-            this.btn_NhanVien = new System.Windows.Forms.Button();
+            this.btn_NhapVien = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -52,10 +52,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(160, 291);
+            this.groupBox2.Location = new System.Drawing.Point(155, 295);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1174, 334);
-            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
             // dataGridView1
@@ -70,6 +70,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmb_MaBN);
             this.groupBox1.Controls.Add(this.cmb_MaBacSi);
             this.groupBox1.Controls.Add(this.txt_MaPhong);
             this.groupBox1.Controls.Add(this.label6);
@@ -80,15 +81,22 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt_MaBenhNhan);
-            this.groupBox1.Controls.Add(this.btn_NhanVien);
+            this.groupBox1.Controls.Add(this.btn_NhapVien);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(159, 38);
+            this.groupBox1.Location = new System.Drawing.Point(154, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1176, 246);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin bệnh nhân";
+            // 
+            // cmb_MaBN
+            // 
+            this.cmb_MaBN.FormattingEnabled = true;
+            this.cmb_MaBN.Location = new System.Drawing.Point(273, 68);
+            this.cmb_MaBN.Name = "cmb_MaBN";
+            this.cmb_MaBN.Size = new System.Drawing.Size(242, 24);
+            this.cmb_MaBN.TabIndex = 14;
             // 
             // cmb_MaBacSi
             // 
@@ -173,21 +181,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Ngày nhập viện :";
             // 
-            // txt_MaBenhNhan
+            // btn_NhapVien
             // 
-            this.txt_MaBenhNhan.Location = new System.Drawing.Point(273, 68);
-            this.txt_MaBenhNhan.Name = "txt_MaBenhNhan";
-            this.txt_MaBenhNhan.Size = new System.Drawing.Size(242, 22);
-            this.txt_MaBenhNhan.TabIndex = 0;
-            // 
-            // btn_NhanVien
-            // 
-            this.btn_NhanVien.Location = new System.Drawing.Point(458, 166);
-            this.btn_NhanVien.Name = "btn_NhanVien";
-            this.btn_NhanVien.Size = new System.Drawing.Size(142, 49);
-            this.btn_NhanVien.TabIndex = 3;
-            this.btn_NhanVien.Text = "Nhập viện";
-            this.btn_NhanVien.UseVisualStyleBackColor = true;
+            this.btn_NhapVien.Location = new System.Drawing.Point(458, 166);
+            this.btn_NhapVien.Name = "btn_NhapVien";
+            this.btn_NhapVien.Size = new System.Drawing.Size(142, 49);
+            this.btn_NhapVien.TabIndex = 3;
+            this.btn_NhapVien.Text = "Nhập viện";
+            this.btn_NhapVien.UseVisualStyleBackColor = true;
+            this.btn_NhapVien.Click += new System.EventHandler(this.btn_NhapVien_Click);
             // 
             // dateTimePicker1
             // 
@@ -207,6 +209,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frm_Nguyen_NhapVien";
             this.Text = "frm_Nguyen_NhapVien";
+            this.Load += new System.EventHandler(this.frm_Nguyen_NhapVien_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -220,6 +223,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cmb_MaBN;
         private System.Windows.Forms.ComboBox cmb_MaBacSi;
         private System.Windows.Forms.TextBox txt_MaPhong;
         private System.Windows.Forms.Label label6;
@@ -230,8 +234,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_MaBenhNhan;
-        private System.Windows.Forms.Button btn_NhanVien;
+        private System.Windows.Forms.Button btn_NhapVien;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

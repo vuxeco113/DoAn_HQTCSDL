@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{A22BD053-A3F0-41F4-85AF-CFCEECA6B972}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UlinityTool", "UlinityTool\UlinityTool.csproj", "{5BA59E30-FAF7-4009-B77A-5048DD75B0CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A22BD053-A3F0-41F4-85AF-CFCEECA6B972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A22BD053-A3F0-41F4-85AF-CFCEECA6B972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A22BD053-A3F0-41F4-85AF-CFCEECA6B972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA59E30-FAF7-4009-B77A-5048DD75B0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA59E30-FAF7-4009-B77A-5048DD75B0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA59E30-FAF7-4009-B77A-5048DD75B0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA59E30-FAF7-4009-B77A-5048DD75B0CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

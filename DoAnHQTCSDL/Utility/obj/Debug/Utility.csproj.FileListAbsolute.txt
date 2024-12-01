@@ -4,3 +4,9 @@ D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.cspr
 D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
 D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.dll
 D:\DATABASE\PROJECT_QLBV\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\bin\Debug\Utility.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\bin\Debug\Utility.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.pdb

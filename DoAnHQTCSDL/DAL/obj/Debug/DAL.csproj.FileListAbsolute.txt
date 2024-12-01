@@ -16,3 +16,14 @@ D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.cspro
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.dll
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DAL.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DAL.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DTO.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\Utility.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DTO.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\Utility.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.pdb

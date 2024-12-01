@@ -10,3 +10,9 @@ D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\obj\Debug\DTO.cspro
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\obj\Debug\DTO.dll
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\obj\Debug\DTO.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\bin\Debug\DTO.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\bin\Debug\DTO.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\obj\Debug\DTO.dll
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DTO\obj\Debug\DTO.pdb

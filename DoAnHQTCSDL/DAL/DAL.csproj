@@ -46,6 +46,7 @@
     <Compile Include="CHITIET_PN_THUOC_DAL.cs" />
     <Compile Include="CHI_TIET_TOA_THUOC_DAL.cs" />
     <Compile Include="dbContext.cs" />
+    <Compile Include="HO_SO_BENH_AN_DAL.cs" />
     <Compile Include="KHOA_DAL.cs" />
     <Compile Include="LICH_TRUC_DAL.cs" />
     <Compile Include="LUUKHO_DAL.cs" />
@@ -60,6 +61,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{7637e71b-b185-436c-9b66-33c22079e60e}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{a22bd053-a3f0-41f4-85af-cfceeca6b972}</Project>
+      <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

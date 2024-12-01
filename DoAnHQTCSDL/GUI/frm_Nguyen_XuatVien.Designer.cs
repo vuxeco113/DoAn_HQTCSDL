@@ -62,10 +62,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(205, 57);
+            this.groupBox1.Location = new System.Drawing.Point(157, 74);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1155, 539);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // groupBox2
@@ -94,11 +94,12 @@
             this.btn_XuatVien.TabIndex = 4;
             this.btn_XuatVien.Text = "Xuất viện";
             this.btn_XuatVien.UseVisualStyleBackColor = true;
+            this.btn_XuatVien.Click += new System.EventHandler(this.btn_XuatVien_Click);
             // 
             // cmb_MaBacSi
             // 
             this.cmb_MaBacSi.FormattingEnabled = true;
-            this.cmb_MaBacSi.Location = new System.Drawing.Point(583, 98);
+            this.cmb_MaBacSi.Location = new System.Drawing.Point(583, 103);
             this.cmb_MaBacSi.Name = "cmb_MaBacSi";
             this.cmb_MaBacSi.Size = new System.Drawing.Size(178, 24);
             this.cmb_MaBacSi.TabIndex = 13;
@@ -138,6 +139,7 @@
             this.cmb_MaBenhNhan.Name = "cmb_MaBenhNhan";
             this.cmb_MaBenhNhan.Size = new System.Drawing.Size(186, 24);
             this.cmb_MaBenhNhan.TabIndex = 9;
+            this.cmb_MaBenhNhan.SelectedIndexChanged += new System.EventHandler(this.cmbMaBenhNhan_SelectedIndexChanged);
             // 
             // txt_MaRaVien
             // 
@@ -200,6 +202,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frm_Nguyen_XuatVien";
             this.Text = "frm_Nguyen_XuatVien";
+            this.Load += new System.EventHandler(this.frm_Nguyen_XuatVien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

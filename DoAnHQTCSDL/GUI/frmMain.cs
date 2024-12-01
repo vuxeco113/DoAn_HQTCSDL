@@ -155,38 +155,38 @@ namespace GUI
 
         private void hồSơBệnhÁnToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Duy_HoSoBenhAn());
-            //label_top.Text = "Hồ Sơ Bệnh Nhân";
+            OpenChildForm(new frm_Duy_HoSoBenhAn());
+            label_top.Text = "Hồ Sơ Bệnh Nhân";
         }
 
         private void tìmKiếmHồSơBệnhÁnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Duy_TimKiemHoSoBenhAn());
-            //label_top.Text = "Tìm Kiếm Hồ Sơ Bệnh Nhân";
+            OpenChildForm(new frm_Duy_TimKiemHoSoBenhAn());
+            label_top.Text = "Tìm Kiếm Hồ Sơ Bệnh Nhân";
         }
 
         private void nhậpViệnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Nguyen_NhapVien());
-            //label_top.Text = "Nhập Viện";
+            OpenChildForm(new frm_Nguyen_NhapVien());
+            label_top.Text = "Nhập Viện";
         }
 
         private void xuấtViệnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Nguyen_XuatVien());
-            //label_top.Text = "Xuất Viện";
+            OpenChildForm(new frm_Nguyen_XuatVien());
+            label_top.Text = "Xuất Viện";
         }
 
         private void lịchSửNhậpXuấtViệnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Nguyen_LichSuNhapVien());
-            //label_top.Text = "Tra Cứu Lịch Sử Nhập Viện";
+            OpenChildForm(new frm_Nguyen_LichSuNhapVien());
+            label_top.Text = "Tra Cứu Lịch Sử Nhập Viện";
         }
 
         private void kiểmTraBHYTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new frm_Nguyen_KiemTraBHYT());
-            //label_top.Text = "Kiểm Tra BHYT";
+            OpenChildForm(new frm_Nguyen_KiemTraBHYT());
+            label_top.Text = "Kiểm Tra BHYT";
         }
 
         private void phiếuXétNghiệmToolStripMenuItem_Click(object sender, EventArgs e)

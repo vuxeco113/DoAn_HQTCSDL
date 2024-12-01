@@ -95,6 +95,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frm_Nguyen_LichSuNhapVien";
             this.Text = "frm_Nguyen_LichSuNhapVien";
+            this.Load += new System.EventHandler(this.frm_Nguyen_LichSuNhapVien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

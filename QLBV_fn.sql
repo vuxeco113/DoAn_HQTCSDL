@@ -2112,3 +2112,23 @@ DEALLOCATE CURS_BAC_SI_CUNG_CA;
 
 
 ------------------------
+--Nguyên--
+CREATE FUNCTION FUNC_LAY_MA_NHAP_VIEN
+(
+    @MaBenhNhan CHAR(10)
+)
+RETURNS CHAR(10)
+AS
+BEGIN
+    DECLARE @MaNhapVien CHAR(10);
+
+    -- Lấy mã nhập viện từ bảng NHAPVIEN dựa trên mã bệnh nhân
+    SELECT @MaNhapVien = MaNhapVien
+    FROM NHAPVIEN
+    WHERE MaBenhNhan = @MaBenhNhan;
+
+    -- Trả về mã nhập viện
+    RETURN @MaNhapVien;
+END;
+GO
+

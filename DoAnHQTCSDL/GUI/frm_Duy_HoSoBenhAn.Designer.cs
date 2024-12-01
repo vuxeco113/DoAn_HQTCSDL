@@ -30,7 +30,6 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -38,12 +37,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbTong = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaBenhNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLapHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaBacSi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiDungHoSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTTHS = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnTaiLai = new System.Windows.Forms.Button();
             this.rtbNoiDung = new System.Windows.Forms.RichTextBox();
@@ -59,14 +53,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTTHS)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnThoat);
-            this.groupBox3.Controls.Add(this.btnTimKiem);
             this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.btnXoa);
@@ -82,22 +75,13 @@
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(82, 531);
+            this.btnThoat.Location = new System.Drawing.Point(82, 468);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(182, 59);
             this.btnThoat.TabIndex = 16;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.White;
-            this.btnTimKiem.Location = new System.Drawing.Point(82, 430);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(182, 59);
-            this.btnTimKiem.TabIndex = 15;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
@@ -108,6 +92,7 @@
             this.btnLuu.TabIndex = 14;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -118,6 +103,7 @@
             this.btnSua.TabIndex = 13;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -128,6 +114,7 @@
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -138,12 +125,13 @@
             this.btnThem.TabIndex = 11;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lbTong);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvTTHS);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(68, 365);
             this.groupBox2.Name = "groupBox2";
@@ -173,56 +161,16 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Tổng hồ sơ";
             // 
-            // dataGridView1
+            // dgvTTHS
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHoSo,
-            this.MaBenhNhan,
-            this.NgayLapHoSo,
-            this.MaBacSi,
-            this.NoiDungHoSo});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(753, 287);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // MaHoSo
-            // 
-            this.MaHoSo.HeaderText = "Mã hồ sơ";
-            this.MaHoSo.MinimumWidth = 6;
-            this.MaHoSo.Name = "MaHoSo";
-            this.MaHoSo.Width = 125;
-            // 
-            // MaBenhNhan
-            // 
-            this.MaBenhNhan.HeaderText = "Mã bệnh nhân";
-            this.MaBenhNhan.MinimumWidth = 6;
-            this.MaBenhNhan.Name = "MaBenhNhan";
-            this.MaBenhNhan.Width = 125;
-            // 
-            // NgayLapHoSo
-            // 
-            this.NgayLapHoSo.HeaderText = "Ngày lập hồ sơ";
-            this.NgayLapHoSo.MinimumWidth = 6;
-            this.NgayLapHoSo.Name = "NgayLapHoSo";
-            this.NgayLapHoSo.Width = 125;
-            // 
-            // MaBacSi
-            // 
-            this.MaBacSi.HeaderText = "Mã bác sĩ";
-            this.MaBacSi.MinimumWidth = 6;
-            this.MaBacSi.Name = "MaBacSi";
-            this.MaBacSi.Width = 125;
-            // 
-            // NoiDungHoSo
-            // 
-            this.NoiDungHoSo.HeaderText = "Nội dung";
-            this.NoiDungHoSo.MinimumWidth = 6;
-            this.NoiDungHoSo.Name = "NoiDungHoSo";
-            this.NoiDungHoSo.Width = 125;
+            this.dgvTTHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTTHS.Location = new System.Drawing.Point(6, 23);
+            this.dgvTTHS.Name = "dgvTTHS";
+            this.dgvTTHS.RowHeadersWidth = 51;
+            this.dgvTTHS.RowTemplate.Height = 24;
+            this.dgvTTHS.Size = new System.Drawing.Size(753, 287);
+            this.dgvTTHS.TabIndex = 0;
+            this.dgvTTHS.SelectionChanged += new System.EventHandler(this.dgvTTHS_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -254,6 +202,7 @@
             this.btnTaiLai.TabIndex = 10;
             this.btnTaiLai.Text = "Tải lại";
             this.btnTaiLai.UseVisualStyleBackColor = false;
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // rtbNoiDung
             // 
@@ -360,10 +309,11 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_Duy_HoSoBenhAn";
             this.Text = "frm_Duy_HoSoBenhAn";
+            this.Load += new System.EventHandler(this.frm_Duy_HoSoBenhAn_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTTHS)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -375,7 +325,6 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
@@ -383,12 +332,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbTong;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHoSo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaBenhNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLapHoSo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaBacSi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoiDungHoSo;
+        private System.Windows.Forms.DataGridView dgvTTHS;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnTaiLai;
         private System.Windows.Forms.RichTextBox rtbNoiDung;

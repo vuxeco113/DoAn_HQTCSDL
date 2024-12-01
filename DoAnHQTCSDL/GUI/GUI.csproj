@@ -306,6 +306,10 @@
       <Project>{7637e71b-b185-436c-9b66-33c22079e60e}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UlinityTool\UlinityTool.csproj">
+      <Project>{5ba59e30-faf7-4009-b77a-5048dd75b0cf}</Project>
+      <Name>UlinityTool</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utility\Utility.csproj">
       <Project>{a22bd053-a3f0-41f4-85af-cfceeca6b972}</Project>
       <Name>Utility</Name>
