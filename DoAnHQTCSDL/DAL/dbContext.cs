@@ -8,6 +8,6 @@ namespace DAL
 {
     public class dbContext
     {
-        public string strcon = "Data Source=DESKTOP-JARJMT7\\SA;Initial Catalog=QLBV;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        public string strcon = "Data Source=LIEM_PHONG\\THCSDL;Initial Catalog=QLBV;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
     }
 }
