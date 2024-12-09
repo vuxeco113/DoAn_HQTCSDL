@@ -53,7 +53,7 @@
             // txtMaBS
             // 
             this.txtMaBS.Location = new System.Drawing.Point(542, 275);
-            this.txtMaBS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaBS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaBS.Name = "txtMaBS";
             this.txtMaBS.Size = new System.Drawing.Size(348, 27);
             this.txtMaBS.TabIndex = 1;
@@ -81,7 +81,7 @@
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(542, 324);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(348, 27);
             this.txtMatKhau.TabIndex = 3;
@@ -89,17 +89,18 @@
             // btnDangNhap
             // 
             this.btnDangNhap.Location = new System.Drawing.Point(340, 430);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(191, 49);
             this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnNhapLai
             // 
             this.btnNhapLai.Location = new System.Drawing.Point(700, 430);
-            this.btnNhapLai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNhapLai.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapLai.Name = "btnNhapLai";
             this.btnNhapLai.Size = new System.Drawing.Size(191, 49);
             this.btnNhapLai.TabIndex = 6;
@@ -110,7 +111,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(340, 375);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(155, 24);
             this.checkBox1.TabIndex = 7;
@@ -134,7 +135,7 @@
             this.Controls.Add(this.txtMaBS);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDangNhap";
             this.Text = "frmDangNhap";
             this.Load += new System.EventHandler(this.frmDangNhap_Load);

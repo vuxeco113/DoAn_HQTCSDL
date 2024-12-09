@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,7 @@ namespace GUI
             //this.TopMost = true;  // Đặt form luôn ở trên cùng (tuỳ chọn)
         }
         private Form CurrentFormChild;
+        BAC_SI_DTO bs;
         private void OpenChildForm(Form childForm)
         {
             if (CurrentFormChild != null)
@@ -46,8 +48,58 @@ namespace GUI
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
+
+            thuốcToolStripMenuItem.Enabled = false;
+            quảnLýBệnhNhânToolStripMenuItem.Enabled = false;
+            lịchTrựcToolStripMenuItem.Enabled=false;
+            hồSơBệnhÁnToolStripMenuItem.Enabled = false;
+            nhậpXuấtViệnToolStripMenuItem.Enabled=false;
+            bácSĩToolStripMenuItem.Enabled=false;
+
+            chứcNăngToolStripMenuItem.Enabled=false ;
+            danhMụcToolStripMenuItem.Enabled=false ;
             //load_logo();
-            
+            frmDangNhap DangNhap = new frmDangNhap();
+            if (CurrentFormChild != null)
+            {
+                CurrentFormChild.Close();
+            }
+            CurrentFormChild = DangNhap;
+            DangNhap.TopLevel = false;
+            DangNhap.FormBorderStyle = FormBorderStyle.None;
+            DangNhap.Dock = DockStyle.Fill;
+            panel_body.Controls.Add(DangNhap);
+            panel_body.Tag = DangNhap;
+            DangNhap.BringToFront();
+            DangNhap.truyenBS = new frmDangNhap.BacSiDN(Load_PhienDN);
+            DangNhap.Show();
+
+        }
+        public void Load_PhienDN(BAC_SI_DTO a)
+        {
+            bs = a;
+            ten.Text += bs.HoTen;
+            if (bs.ChucVu=="Điều Dưỡng")
+            {
+                thuốcToolStripMenuItem.Enabled = true;
+                
+            }
+            else if(bs.ChucVu=="Thu Ngân")
+            {
+                quảnLýBệnhNhânToolStripMenuItem.Enabled = true;
+                chứcNăngToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                chứcNăngToolStripMenuItem.Enabled = true;
+                thuốcToolStripMenuItem.Enabled = true;
+                quảnLýBệnhNhânToolStripMenuItem.Enabled = true;
+                lịchTrựcToolStripMenuItem.Enabled = true;
+                hồSơBệnhÁnToolStripMenuItem.Enabled = true;
+                nhậpXuấtViệnToolStripMenuItem.Enabled = true;
+                bácSĩToolStripMenuItem.Enabled = true;
+                danhMụcToolStripMenuItem.Enabled = true;
+            }
         }
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -191,6 +243,13 @@ namespace GUI
         {
             OpenChildForm(new frm_Phong_QuanLyBacSi());
             label_top.Text = "Bác sĩ";
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMain_Load(sender, e);
+            ten.Text = "Chào :";
+            //CurrentFormChild.Close();
         }
     }
 }

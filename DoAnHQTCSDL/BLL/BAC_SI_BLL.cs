@@ -1,6 +1,7 @@
 ﻿using DTO;
 using DAL;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BLL
 {
@@ -40,6 +41,26 @@ namespace BLL
         public List<KHOA_DTO> LoadKhoa()
         {
             return bacSiDal.LoadKhoa();
+        }
+        public BAC_SI_DTO DangNhap(string ma, string pass)
+        {
+            List<BAC_SI_DTO> ds = bacSiDal.GetAll();
+            BAC_SI_DTO tmp = ds.SingleOrDefault(s => s.MaBacSi == ma);
+            if (tmp == null)
+            {
+                return null;
+            }
+            else
+            {
+                if (tmp.MatKhau != pass)
+                {
+                    return null;
+                }
+                else
+                {
+                    return tmp;
+                }
+            }
         }
     }
 }

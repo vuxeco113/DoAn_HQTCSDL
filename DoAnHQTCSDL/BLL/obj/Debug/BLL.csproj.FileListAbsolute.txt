@@ -41,7 +41,6 @@ C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin
 C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DAL.pdb
 C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DTO.pdb
 C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\Utility.pdb
-C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.dll
 C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.pdb
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\Utility.dll
@@ -85,3 +84,4 @@ D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.CoreC
 D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.Up2Date
 D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.dll
 D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.pdb
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.Up2Date

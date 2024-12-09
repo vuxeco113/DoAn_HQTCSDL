@@ -31,13 +31,13 @@ namespace DAL
                     while (reader.Read())
                     {
                         BAC_SI_DTO tmp = new BAC_SI_DTO(
-                            reader["MaBacSi"].ToString(),
+                            reader["MaBacSi"].ToString().Trim(),
                             reader["HoTen"].ToString(),
                             reader["MaKhoa"].ToString(),
                             reader["SoDienThoai"].ToString(),
                             int.Parse(reader["SoCaTruc"].ToString()),
-                            reader["MatKhau"].ToString(),
-                            reader["ChucVu"].ToString()
+                            reader["MatKhau"].ToString().Trim(),
+                            reader["ChucVu"].ToString().Trim()
                         );
                         ds.Add(tmp);
                     }

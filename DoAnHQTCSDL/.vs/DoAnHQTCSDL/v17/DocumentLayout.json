@@ -1,30 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\",
+  "WorkspaceRootPath": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A22BD053-A3F0-41F4-85AF-CFCEECA6B972}|Utility\\Utility.csproj|d:\\hufi\\hk5\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\utility\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A22BD053-A3F0-41F4-85AF-CFCEECA6B972}|Utility\\Utility.csproj|solutionrelative:utility\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\vuxec\\onedrive\\m\u00E1y t\u00EDnh\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BA59E30-FAF7-4009-B77A-5048DD75B0CF}|UlinityTool\\UlinityTool.csproj|D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\ulinitytool\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BA59E30-FAF7-4009-B77A-5048DD75B0CF}|UlinityTool\\UlinityTool.csproj|solutionrelative:ulinitytool\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\vuxec\\onedrive\\m\u00E1y t\u00EDnh\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{156F24FE-21E8-4ADB-AB85-B96E85672459}|DAL\\DAL.csproj|D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{156F24FE-21E8-4ADB-AB85-B96E85672459}|DAL\\DAL.csproj|solutionrelative:dal\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\vuxec\\onedrive\\m\u00E1y t\u00EDnh\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frm_nguyen_nhapvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frm_nguyen_nhapvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frm_nguyen_xuatvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frm_nguyen_xuatvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frm_phong_quanlybacsi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frm_phong_quanlybacsi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\vuxec\\onedrive\\m\u00E1y t\u00EDnh\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,77 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "dbContext.cs",
-              "DocumentMoniker": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\DAL\\dbContext.cs",
-              "RelativeDocumentMoniker": "DAL\\dbContext.cs",
-              "ToolTip": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\DAL\\dbContext.cs",
-              "RelativeToolTip": "DAL\\dbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAACVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T16:12:08.222Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DBConnect.cs",
-              "DocumentMoniker": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\UlinityTool\\DBConnect.cs",
-              "RelativeDocumentMoniker": "UlinityTool\\DBConnect.cs",
-              "ToolTip": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\UlinityTool\\DBConnect.cs",
-              "RelativeToolTip": "UlinityTool\\DBConnect.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAACZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T16:11:57.763Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DBconnection.cs",
-              "DocumentMoniker": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\Utility\\DBconnection.cs",
-              "RelativeDocumentMoniker": "Utility\\DBconnection.cs",
-              "ToolTip": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\Utility\\DBconnection.cs",
-              "RelativeToolTip": "Utility\\DBconnection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAACTAAAA",
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
+              "RelativeDocumentMoniker": "GUI\\frmMain.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
+              "RelativeToolTip": "GUI\\frmMain.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAA5wPgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T16:06:49.164Z",
+              "WhenOpened": "2024-12-09T16:25:54.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
+              "RelativeDocumentMoniker": "GUI\\frmMain.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs [Design]",
+              "RelativeToolTip": "GUI\\frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T16:25:51.832Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frm_Nguyen_NhapVien.cs [Design]",
-              "DocumentMoniker": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Nguyen_NhapVien.cs",
-              "RelativeDocumentMoniker": "GUI\\frm_Nguyen_NhapVien.cs",
-              "ToolTip": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Nguyen_NhapVien.cs [Design]",
-              "RelativeToolTip": "GUI\\frm_Nguyen_NhapVien.cs [Design]",
+              "Title": "frmDangNhap.cs",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "GUI\\frmDangNhap.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmDangNhap.cs",
+              "RelativeToolTip": "GUI\\frmDangNhap.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAnwDcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T15:56:54.072Z"
+              "WhenOpened": "2024-12-09T16:23:33.758Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frm_Nguyen_XuatVien.cs [Design]",
-              "DocumentMoniker": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Nguyen_XuatVien.cs",
-              "RelativeDocumentMoniker": "GUI\\frm_Nguyen_XuatVien.cs",
-              "ToolTip": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Nguyen_XuatVien.cs [Design]",
-              "RelativeToolTip": "GUI\\frm_Nguyen_XuatVien.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "frmDangNhap.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "GUI\\frmDangNhap.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmDangNhap.cs [Design]",
+              "RelativeToolTip": "GUI\\frmDangNhap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T15:56:53.163Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frm_Phong_QuanLyBacSi.cs [Design]",
-              "DocumentMoniker": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Phong_QuanLyBacSi.cs",
-              "RelativeDocumentMoniker": "GUI\\frm_Phong_QuanLyBacSi.cs",
-              "ToolTip": "D:\\hufi\\hk5\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frm_Phong_QuanLyBacSi.cs [Design]",
-              "RelativeToolTip": "GUI\\frm_Phong_QuanLyBacSi.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T15:56:47.313Z"
+              "WhenOpened": "2024-12-09T16:23:31.174Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
