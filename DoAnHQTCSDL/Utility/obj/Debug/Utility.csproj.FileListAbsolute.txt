@@ -28,3 +28,9 @@ C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\U
 C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
 C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.dll
 C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.pdb
+D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\bin\Debug\Utility.dll
+D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\bin\Debug\Utility.pdb
+D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.dll
+D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.pdb

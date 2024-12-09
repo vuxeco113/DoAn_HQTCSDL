@@ -10,7 +10,7 @@ namespace UlinityTool
     public class DBConnect
     {
         SqlConnection conn;
-        string connectionString = ("Data Source=DESKTOP-3T788PM;Initial Catalog=QLBV2;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        string connectionString = ("Data Source=LIEM_PHONG\\THCSDL;Initial Catalog=QLBV;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
 
         public SqlConnection Conn { get => conn; set => conn = value; }
 
