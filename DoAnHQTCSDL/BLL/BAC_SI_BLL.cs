@@ -17,7 +17,7 @@ namespace BLL
         // Lấy danh sách tất cả bác sĩ
         public List<BAC_SI_DTO> GetAllBacSi()
         {
-            return bacSiDal.get_all();
+            return bacSiDal.GetAll();
         }
 
         // Thêm một bác sĩ
@@ -36,6 +36,10 @@ namespace BLL
         public bool XoaBacSi(string maBacSi)
         {
             return bacSiDal.Xoa_BacSi(maBacSi);
+        }
+        public List<KHOA_DTO> LoadKhoa()
+        {
+            return bacSiDal.LoadKhoa();
         }
     }
 }

@@ -16,3 +16,9 @@ D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utili
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.dll
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\bin\Debug\Utility.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\bin\Debug\Utility.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\Utility\obj\Debug\Utility.pdb

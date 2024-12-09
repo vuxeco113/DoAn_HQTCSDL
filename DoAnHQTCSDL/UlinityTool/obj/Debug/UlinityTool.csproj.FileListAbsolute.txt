@@ -10,3 +10,9 @@ D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\U
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.csproj.CoreCompileInputs.cache
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.dll
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\bin\Debug\UlinityTool.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\bin\Debug\UlinityTool.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.csproj.AssemblyReference.cache
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.pdb

@@ -113,29 +113,17 @@
     <Compile Include="frm_Nguyen_XuatVien.Designer.cs">
       <DependentUpon>frm_Nguyen_XuatVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Phong_ChiaCa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Phong_ChiaCa.Designer.cs">
-      <DependentUpon>frm_Phong_ChiaCa.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Phong_ChiaLichTruc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Phong_ChiaLichTruc.Designer.cs">
       <DependentUpon>frm_Phong_ChiaLichTruc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Phong_QuanLyCaTruc.cs">
+    <Compile Include="frm_Phong_QuanLyBacSi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Phong_QuanLyCaTruc.Designer.cs">
-      <DependentUpon>frm_Phong_QuanLyCaTruc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Phong_XemLichTruc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Phong_XemLichTruc.Designer.cs">
-      <DependentUpon>frm_Phong_XemLichTruc.cs</DependentUpon>
+    <Compile Include="frm_Phong_QuanLyBacSi.Designer.cs">
+      <DependentUpon>frm_Phong_QuanLyBacSi.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Tri_QuanLyBenhNhan.cs">
       <SubType>Form</SubType>
@@ -232,14 +220,11 @@
     <EmbeddedResource Include="frm_Nguyen_XuatVien.resx">
       <DependentUpon>frm_Nguyen_XuatVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Phong_ChiaCa.resx">
-      <DependentUpon>frm_Phong_ChiaCa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Phong_ChiaLichTruc.resx">
       <DependentUpon>frm_Phong_ChiaLichTruc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Phong_XemLichTruc.resx">
-      <DependentUpon>frm_Phong_XemLichTruc.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Phong_QuanLyBacSi.resx">
+      <DependentUpon>frm_Phong_QuanLyBacSi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Tri_QuanLyBenhNhan.resx">
       <DependentUpon>frm_Tri_QuanLyBenhNhan.cs</DependentUpon>

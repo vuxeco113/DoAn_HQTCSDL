@@ -46,3 +46,16 @@ C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj
 C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.pdb
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\Utility.dll
 D:\hufi\hk5\He QTCSDL\Đồ án\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\Utility.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\BLL.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\BLL.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DAL.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DTO.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\Utility.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DAL.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\DTO.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\bin\Debug\Utility.pdb
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.dll
+D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\BLL\obj\Debug\BLL.pdb
