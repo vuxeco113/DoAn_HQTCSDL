@@ -213,3 +213,46 @@ D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\Utility.pdb
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\DAL.pdb
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_QuanLyBacSi.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\GUI.exe.config
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\GUI.exe
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\GUI.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\BLL.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\DTO.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\UlinityTool.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\Utility.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\DAL.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\BLL.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\DTO.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\UlinityTool.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\Utility.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\bin\Debug\DAL.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frmDangNhap.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frmLayThuoc.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frmMain.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frmNhapThuoc.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frmThongTinThuoc.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Duy_HoSoBenhAn.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Duy_TimKiemHoSoBenhAn.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Nguyen_KiemTraBHYT.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Nguyen_LichSuNhapVien.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Nguyen_NhapVien.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Nguyen_XuatVien.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_LichTruc.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_QuanLyBacSi.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_QuanLyBenhNhan.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_timkiemphieukham.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_timkiem_BN.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_timkiem_toathuoc.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_Phieukham.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_Thanhtoan.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_ToaThuoc.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_XemChiTiet_HSBN.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_phieuxetnghiem.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Tri_xemchitiettoathuoc.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.exe
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.pdb

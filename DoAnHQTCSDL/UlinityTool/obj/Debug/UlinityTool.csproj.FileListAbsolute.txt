@@ -16,3 +16,9 @@ D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.csproj.CoreCompileInputs.cache
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.dll
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\bin\Debug\UlinityTool.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\bin\Debug\UlinityTool.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.csproj.AssemblyReference.cache
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.csproj.CoreCompileInputs.cache
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\UlinityTool\obj\Debug\UlinityTool.pdb

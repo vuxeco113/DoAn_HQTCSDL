@@ -5,13 +5,12 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace UlinityTool
 {
     public class DBConnect
     {
         SqlConnection conn;
-        string connectionString = ("Data Source=LIEM_PHONG\\THCSDL;Initial Catalog=QLBV;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        string connectionString = ("Data Source=DESKTOP-3T788PM;Initial Catalog=QLBV2;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
 
         public SqlConnection Conn { get => conn; set => conn = value; }
 
@@ -74,24 +73,27 @@ namespace UlinityTool
             return result;
         }
 
-        public DataTable GetDataTable(string sql, SqlParameter[] parameters = null)
+        public DataTable GetDataTable(string query, SqlParameter[] parameters, CommandType commandType)
         {
-            DataTable dt = new DataTable();
-
-            SqlCommand cmd = new SqlCommand(sql, Conn)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                CommandType = sql.StartsWith("sp_") ? CommandType.StoredProcedure : CommandType.Text
-            };
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.CommandType = commandType;
 
-            if (parameters != null)
-            {
-                cmd.Parameters.AddRange(parameters);
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
             }
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            return dt;
         }
+
 
         public bool NhapVien(string maNhapVien, string maBenhNhan, DateTime ngayNhapVien, string maBacSi, string maPhong, string lyDoNhapVien)
         {
@@ -110,7 +112,7 @@ namespace UlinityTool
             return db.ExecuteNonQuery(sql, parameters) > 0;
         }
 
-        public bool XuatVien(string maRaVien, string maNhapVien, string maBenhNhan, string maBacSi, DateTime ngayRaVien, string tinhTrangRaVien, out int soNgayNamVien)
+        public bool XuatVien(string maRaVien, string maNhapVien, string maBenhNhan, DateTime ngayRaVien, string tinhTrangRaVien, out int soNgayNamVien)
         {
             DBConnect db = new DBConnect();
             soNgayNamVien = 0;
@@ -120,7 +122,6 @@ namespace UlinityTool
                 new SqlParameter("@MaRaVien", maRaVien),
                 new SqlParameter("@MaNhapVien", maNhapVien),
                 new SqlParameter("@MaBenhNhan", maBenhNhan),
-                new SqlParameter("@MaBacSi", maBacSi),
                 new SqlParameter("@NgayRaVien", ngayRaVien),
                 new SqlParameter("@TinhTrangRaVien", tinhTrangRaVien),
                 new SqlParameter("@SoNgayNamVien", SqlDbType.Int) { Direction = ParameterDirection.Output }
@@ -140,51 +141,36 @@ namespace UlinityTool
         {
             DBConnect db = new DBConnect();
 
-            string sql = "sp_LichSuNhapVien";
+            string sql = "PROC_LICHSUNHAPVIEN";
             SqlParameter[] parameters = {
-                new SqlParameter("@MaBenhNhan", maBenhNhan)
-                };
+        new SqlParameter("@MaBenhNhan", SqlDbType.Char) { Value = maBenhNhan }
+    };
 
-            return db.GetDataTable(sql, parameters);
+            return db.GetDataTable(sql, parameters, CommandType.StoredProcedure);
         }
 
         public bool KiemTraBaoHiem(string maBenhNhan)
         {
             DBConnect db = new DBConnect();
 
-            string sql = "SELECT dbo.fn_HamKiemTraBaoHiem(@MaBenhNhan)";
+            string sql = "SELECT dbo.FUNC_HAM_KIEM_TRA_BAO_HIEM(@MaBenhNhan)";
             SqlParameter[] parameters = {
-                new SqlParameter("@MaBenhNhan", maBenhNhan)
-                };
+        new SqlParameter("@MaBenhNhan", SqlDbType.Char) { Value = maBenhNhan }
+    };
 
             object result = db.ExecuteScalar(sql, parameters);
             return result != null && Convert.ToBoolean(result);
         }
 
+
+
         public int TongBenhNhanDangDieuTri()
         {
             DBConnect db = new DBConnect();
 
-            string sql = "SELECT dbo.fn_TongBenhNhanDangNamVien()";
+            string sql = "SELECT dbo.FUNC_TONG_BENH_NHAN_DANG_NAM_VIEN()";
             object result = db.ExecuteScalar(sql);
-
             return result != null ? Convert.ToInt32(result) : 0;
-        }
-
-        public DataTable LayTatCaBenhNhanNhapVien()
-        {
-            DBConnect db = new DBConnect();
-
-            string sql = "SELECT * FROM NHAPVIEN";
-            return db.GetDataTable(sql);
-        }
-
-        public DataTable LayTatCaBenhNhanXuatVien()
-        {
-            DBConnect db = new DBConnect();
-
-            string sql = "SELECT * FROM RAVIEN";
-            return db.GetDataTable(sql);
         }
 
     }

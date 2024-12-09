@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UlinityTool;
-
+using Utility;
 namespace GUI
 {
     public partial class frm_Nguyen_LichSuNhapVien : Form
@@ -17,7 +17,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        DBconnection dbc = new DBconnection();
         DBConnect dBConnect = new DBConnect();
         DataTable dt_dulieu = new DataTable();
         private void frm_Nguyen_LichSuNhapVien_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace GUI
         public void Load_BN()
         {
             string sql = "select * from BENHNHAN";
-            dt_dulieu = dBConnect.GetDataTable(sql);
+            dt_dulieu = dbc.GetDataTable(sql);
 
             cmb_MaBenhNhan.DataSource = dt_dulieu;
             cmb_MaBenhNhan.DisplayMember = "MaBenhNhan";
@@ -40,23 +40,23 @@ namespace GUI
 
             try
             {
-                dt_dulieu = dBConnect.LayLichSuNhapVien(maBenhNhan);
-                dataGridView1.DataSource = dt_dulieu;
+                DataTable dt_dulieu = dBConnect.LayLichSuNhapVien(maBenhNhan);
+
+                if (dt_dulieu.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt_dulieu;
+                }
+                else
+                {
+                    MessageBox.Show("Không có lịch sử nhập viện cho bệnh nhân này.");
+                    dataGridView1.DataSource = null;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
-
-        private void cmb_MaBenhNhan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

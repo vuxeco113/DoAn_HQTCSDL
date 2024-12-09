@@ -211,10 +211,10 @@ GO
 
 INSERT INTO NHAPVIEN (MaNhapVien, MaBenhNhan, NgayNhapVien, MaBacSi, MaPhong, LyDoNhapVien)
 VALUES 
-    ('NV001', 'BN00000001', '2024-01-10', 'B001', 'P001', N'Cảm cúm nặng')
+    ('NV00000001', 'BN00000001', '2024-01-10', 'B001', 'P001', N'Cảm cúm nặng')
 	INSERT INTO NHAPVIEN (MaNhapVien, MaBenhNhan, NgayNhapVien, MaBacSi, MaPhong, LyDoNhapVien)
 VALUES
-    ('NV002', 'BN00000005', '2024-01-15', 'B002', 'P002', N'Viêm phổi cấp')
+    ('NV00000002', 'BN00000005', '2024-01-15', 'B002', 'P002', N'Viêm phổi cấp')
 
 CREATE TABLE RAVIEN (
     MaRaVien CHAR(10) PRIMARY KEY, -- Mã Ra Viện
@@ -479,6 +479,28 @@ BEGIN
 END;
 GO
 
+--Trigger không thể xuất viện 2 lần(Nguyên)
+CREATE TRIGGER TRG_CheckRaVien
+ON RAVIEN
+INSTEAD OF INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM RAVIEN rv
+        JOIN INSERTED i ON rv.MaNhapVien = i.MaNhapVien
+    )
+    BEGIN
+        RAISERROR ('Bệnh nhân này đã xuất viện trước đó. Không thể xuất viện thêm lần nữa.', 16, 1);
+        ROLLBACK TRANSACTION;
+        RETURN;
+    END
+    INSERT INTO RAVIEN (MaRaVien, MaNhapVien, NgayRaVien, TinhTrangRaVien, MaBenhNhan, SoNgayNamVien)
+    SELECT MaRaVien, MaNhapVien, NgayRaVien, TinhTrangRaVien, MaBenhNhan, SoNgayNamVien
+    FROM INSERTED;
+END;
+GO
+
 --// Trigger kiểm tra khi thêm dữ liệu vào bảng HOSOBENHAN thì NgayLapHoSo là ngày hiện hành
 CREATE TRIGGER TRG_CHECK_NGAY_LAP_HOSO
 ON HOSOBENHAN
@@ -573,7 +595,7 @@ BEGIN
 END;
 GO
 
---// Trigger kiểm tra trạng thái bệnh nhân để tránh nhập viện hai lần
+--// Trigger kiểm tra trạng thái bệnh nhân để tránh nhập viện hai lần(Nguyên)
 CREATE TRIGGER TRG_NHAPVIEN 
 ON NHAPVIEN
 AFTER INSERT
@@ -596,7 +618,7 @@ BEGIN
 END;
 GO
 
---// Trigger kiểm tra thời gian nhập viện không được sau ngày hiện tại
+--// Trigger kiểm tra thời gian nhập viện không được sau ngày hiện tại(Nguyên)
 CREATE TRIGGER TRG_KIEMTRA_NGAYNHAPVIEN
 ON NHAPVIEN
 AFTER INSERT
@@ -613,7 +635,7 @@ BEGIN
 END;
 GO
 
---// Trigger tự động cập nhật NgàyRaVien khi bệnh nhân xuất viện
+--// Trigger tự động cập nhật NgàyRaVien khi bệnh nhân xuất viện(Nguyên)
 CREATE TRIGGER TRG_CAPNHAT_NGAYRAVIEN
 ON RAVIEN
 AFTER INSERT
@@ -628,7 +650,7 @@ BEGIN
 END;
 GO
 
---// Trigger kiểm tra số ngày nằm viện tối đa
+--// Trigger kiểm tra số ngày nằm viện tối đa (Nguyên)
 CREATE TRIGGER TRG_KIEMTRA_SONGAYNAMVIEN
 ON RAVIEN
 AFTER INSERT
@@ -649,7 +671,7 @@ BEGIN
 END;
 GO
 
---// Trigger tự động ghi nhận thời gian xuất viện hiện tại nếu không nhập ngày
+--// Trigger tự động ghi nhận thời gian xuất viện hiện tại nếu không nhập ngày(Nguyên)
 CREATE TRIGGER TRG_TUDONG_CAPNHAT_NGAYRAVIEN
 ON RAVIEN
 INSTEAD OF INSERT
@@ -1230,49 +1252,93 @@ BEGIN
 END;
 GO
 
---// Procedure nhập viện bệnh nhân
-CREATE PROCEDURE PROC_NHAPVIENBENHNHAN
-    @MaBenhNhan INT,
-    @NgayNhapVien DATE
+--// Procedure nhập viện bệnh nhân(Nguyên)
+CREATE PROCEDURE sp_NhapVienBenhNhan
+    @MaNhapVien CHAR(10),
+    @MaBenhNhan CHAR(10),
+    @NgayNhapVien DATE,
+    @MaBacSi CHAR(10),
+    @MaPhong CHAR(10),
+    @LyDoNhapVien NVARCHAR(255)
 AS
 BEGIN
+    -- Kiểm tra nếu bệnh nhân đã có trạng thái đang điều trị
     IF EXISTS (SELECT 1 FROM BENHNHAN WHERE MaBenhNhan = @MaBenhNhan AND TrangThai = 'Đang điều trị')
     BEGIN
         RAISERROR ('Bệnh nhân đang điều trị, không thể nhập viện hai lần.', 16, 1);
     END
     ELSE
     BEGIN
-        INSERT INTO NHAPVIEN (MaBenhNhan, NgayNhapVien) VALUES (@MaBenhNhan, @NgayNhapVien);
-        UPDATE BENHNHAN SET TrangThai = 'Đang điều trị' WHERE MaBenhNhan = @MaBenhNhan;
+        -- Thực hiện chèn dữ liệu vào bảng NHAPVIEN
+        INSERT INTO NHAPVIEN (MaNhapVien, MaBenhNhan, NgayNhapVien, MaBacSi, MaPhong, LyDoNhapVien) 
+        VALUES (@MaNhapVien, @MaBenhNhan, @NgayNhapVien, @MaBacSi, @MaPhong, @LyDoNhapVien);
+
+        -- Cập nhật trạng thái bệnh nhân trong bảng BENHNHAN
+        UPDATE BENHNHAN 
+        SET TrangThai = 'Đang điều trị' 
+        WHERE MaBenhNhan = @MaBenhNhan;
     END
 END;
-GO
 
---// Procedure xuất viện bệnh nhân
-CREATE PROCEDURE PROC_XUATVIENBENHNHAN
-    @MaBenhNhan INT,
-    @NgayRaVien DATE
+--// Procedure xuất viện bệnh nhân(Nguyên)
+CREATE PROCEDURE sp_XuatVienBenhNhan
+    @MaRaVien CHAR(10),
+    @MaNhapVien CHAR(10),
+    @MaBenhNhan CHAR(10),
+    @NgayRaVien DATE,
+    @TinhTrangRaVien NVARCHAR(255),
+    @SoNgayNamVien INT OUTPUT -- tính số ngày nằm viện và trả về
 AS
 BEGIN
-    DECLARE @NgayNhapVien DATE, @SoNgayNamVien INT;
+    DECLARE @NgayNhapVien DATE;
 
-    SELECT @NgayNhapVien = NgayNhapVien FROM NHAPVIEN WHERE MaBenhNhan = @MaBenhNhan;
+    -- Lấy Ngày Nhập Viện từ NHAPVIEN để tính số ngày nằm viện
+    SELECT @NgayNhapVien = NgayNhapVien 
+    FROM NHAPVIEN 
+    WHERE MaNhapVien = @MaNhapVien;
+
+    -- Tính số ngày nằm viện
     SET @SoNgayNamVien = DATEDIFF(DAY, @NgayNhapVien, @NgayRaVien);
 
-    UPDATE BENHNHAN SET TrangThai = 'Đã xuất viện' WHERE MaBenhNhan = @MaBenhNhan;
-    INSERT INTO RAVIEN (MaBenhNhan, NgayRaVien, SoNgayNamVien) VALUES (@MaBenhNhan, @NgayRaVien, @SoNgayNamVien);
+    -- Cập nhật trạng thái bệnh nhân
+    UPDATE BENHNHAN 
+    SET TrangThai = 'Đã xuất viện' 
+    WHERE MaBenhNhan = @MaBenhNhan;
+
+    -- Thêm thông tin vào bảng RAVIEN
+    INSERT INTO RAVIEN (MaRaVien, MaNhapVien, MaBenhNhan, NgayRaVien, TinhTrangRaVien, SoNgayNamVien)
+    VALUES (@MaRaVien, @MaNhapVien, @MaBenhNhan, @NgayRaVien, @TinhTrangRaVien, @SoNgayNamVien);
 END;
 GO
 
---// Procedure tìm kiếm lịch sử nhập viện của bệnh nhân
-CREATE PROCEDURE PROC_LICHSUNHAPVIEN
-    @MaBenhNhan INT
+--// Procedure tìm kiếm lịch sử nhập viện của bệnh nhân(Nguyên)
+CREATE PROCEDURE PROC_LICHSUNHAPVIEN 
+    @MaBenhNhan CHAR(10) -- Tham số đầu vào là mã bệnh nhân
 AS
 BEGIN
-    SELECT NgayNhapVien, NgayRaVien, HOSOBENHAN.MaBacSi
-    FROM NHAPVIEN, RAVIEN, HOSOBENHAN
-    WHERE NHAPVIEN.MaBenhNhan = @MaBenhNhan
-    ORDER BY NgayNhapVien;
+    BEGIN TRY
+        SELECT 
+            NV.MaNhapVien,
+            NV.NgayNhapVien,
+            NV.LyDoNhapVien,
+            RV.NgayRaVien,
+            RV.TinhTrangRaVien,
+            RV.SoNgayNamVien
+        FROM 
+            NHAPVIEN NV
+        LEFT JOIN 
+            RAVIEN RV ON NV.MaNhapVien = RV.MaNhapVien
+        WHERE 
+            NV.MaBenhNhan = @MaBenhNhan
+        ORDER BY 
+            NV.NgayNhapVien;
+
+    END TRY
+    BEGIN CATCH
+        -- Xử lý lỗi và thông báo nếu có vấn đề xảy ra
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR (@ErrorMessage, 16, 1);
+    END CATCH
 END;
 GO
 
@@ -1761,7 +1827,7 @@ BEGIN
 END;
 GO
 
---// Hàm tính số ngày nằm viện của bệnh nhân
+--// Hàm tính số ngày nằm viện của bệnh nhân(Nguyên)
 CREATE FUNCTION FUNC_SO_NGAY_NAM_VIEN
 (
     @NgayNhapVien DATE,
@@ -1774,7 +1840,7 @@ BEGIN
 END;
 GO
 
---// Hàm tính tổng số bệnh nhân hiện đang nằm viện
+--// Hàm tính tổng số bệnh nhân hiện đang nằm viện(Nguyên)
 CREATE FUNCTION FUNC_TONG_BENH_NHAN_DANG_NAM_VIEN()
 RETURNS INT
 AS
@@ -1783,7 +1849,7 @@ BEGIN
 END;
 GO
 
---// Hàm lấy ngày nhập viện của bệnh nhân
+--// Hàm lấy ngày nhập viện của bệnh nhân(Nguyên)
 CREATE FUNCTION FUNC_HAM_LAY_NGAY_NHAP_VIEN
 (
     @MaBenhNhan INT
@@ -1801,10 +1867,10 @@ BEGIN
 END;
 GO
 
---// Hàm kiểm tra tình trạng bảo hiểm
+--// Hàm kiểm tra tình trạng bảo hiểm(Nguyên)
 CREATE FUNCTION FUNC_HAM_KIEM_TRA_BAO_HIEM
 (
-    @MaBenhNhan INT
+    @MaBenhNhan char(10)
 )
 RETURNS BIT
 AS
@@ -1827,6 +1893,7 @@ BEGIN
     RETURN @KetQua;
 END;
 GO
+
 
 --// Hàm kiểm tra bác sĩ có lịch trực trong ngày
 CREATE FUNCTION FUNC_IS_DOCTOR_ON_SHIFT
@@ -1922,7 +1989,7 @@ CLOSE CURS_HO_SO_BENH_NHAN;
 DEALLOCATE CURS_HO_SO_BENH_NHAN;
 
 ---------------------------------------------------------------------------------------------------------------
--- Cursor duyệt danh sách bệnh nhân theo bác sĩ
+-- Cursor duyệt danh sách bệnh nhân theo bác sĩ(Nguyên)
 DECLARE @MaBacSi1 INT,
         @MaBenhNhan1 INT,
         @HoTen1 NVARCHAR(100),
@@ -2111,8 +2178,7 @@ DEALLOCATE CURS_BAC_SI_CUNG_CA;
 
 
 
-------------------------
---Nguyên--
+--Lấy mã nhập viện theo mã bệnh nhân(Nguyên)
 CREATE FUNCTION FUNC_LAY_MA_NHAP_VIEN
 (
     @MaBenhNhan CHAR(10)
@@ -2131,4 +2197,3 @@ BEGIN
     RETURN @MaNhapVien;
 END;
 GO
-

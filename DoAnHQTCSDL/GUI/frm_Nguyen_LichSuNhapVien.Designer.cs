@@ -84,6 +84,7 @@
             this.btn_KiemTra.TabIndex = 2;
             this.btn_KiemTra.Text = "Kiểm Tra";
             this.btn_KiemTra.UseVisualStyleBackColor = true;
+            this.btn_KiemTra.Click += new System.EventHandler(this.btn_KiemTra_Click);
             // 
             // frm_Nguyen_LichSuNhapVien
             // 

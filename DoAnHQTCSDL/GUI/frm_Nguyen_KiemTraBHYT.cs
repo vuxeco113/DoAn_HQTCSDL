@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UlinityTool;
-
+using Utility;
 namespace GUI
 {
     public partial class frm_Nguyen_KiemTraBHYT : Form
@@ -17,7 +18,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        DBconnection dbc = new DBconnection();
         DBConnect dBConnect = new DBConnect();
         DataTable dt_dulieu = new DataTable();
         private void frm_Nguyen_KiemTraBHYT_Load(object sender, EventArgs e)
@@ -27,8 +28,7 @@ namespace GUI
         public void Load_BN()
         {
             string sql = "select * from BENHNHAN";
-            dt_dulieu = dBConnect.GetDataTable(sql);
-
+            dt_dulieu = dbc.GetDataTable(sql);
             cmb_MaBenhNhan.DataSource = dt_dulieu;
             cmb_MaBenhNhan.DisplayMember = "MaBenhNhan";
             cmb_MaBenhNhan.ValueMember = "MaBenhNhan";
@@ -46,7 +46,6 @@ namespace GUI
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
@@ -56,12 +55,17 @@ namespace GUI
             try
             {
                 int tong = dBConnect.TongBenhNhanDangDieuTri();
-                label3.Text = $"Tổng số bệnh nhân đang điều trị: {tong}";
+                lbl_tong.Text = $"Tổng số bệnh nhân đang điều trị: {tong}";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+
+        private void cmb_MaBenhNhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

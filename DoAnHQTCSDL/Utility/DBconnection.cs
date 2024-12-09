@@ -12,7 +12,7 @@ namespace Utility
     public class DBconnection
     {
         SqlConnection conn;
-        string strconnect = ("Data Source=LIEM_PHONG\\THCSDL;Initial Catalog=QLBV;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        string strconnect = ("Data Source=DESKTOP-3T788PM;Initial Catalog=QLBV2;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
         public DBconnection()
         {
             conn = new SqlConnection(strconnect);

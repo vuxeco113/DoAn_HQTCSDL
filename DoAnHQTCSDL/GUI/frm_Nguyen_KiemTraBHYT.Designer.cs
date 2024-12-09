@@ -32,16 +32,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Tinh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_MaBenhNhan = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_KiemTra = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmb_MaBenhNhan = new System.Windows.Forms.ComboBox();
+            this.lbl_tong = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lbl_tong);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.btn_Tinh);
             this.groupBox2.Location = new System.Drawing.Point(809, 61);
@@ -83,6 +85,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiểm tra bảo hiểm";
             // 
+            // cmb_MaBenhNhan
+            // 
+            this.cmb_MaBenhNhan.FormattingEnabled = true;
+            this.cmb_MaBenhNhan.Location = new System.Drawing.Point(150, 50);
+            this.cmb_MaBenhNhan.Name = "cmb_MaBenhNhan";
+            this.cmb_MaBenhNhan.Size = new System.Drawing.Size(242, 24);
+            this.cmb_MaBenhNhan.TabIndex = 5;
+            this.cmb_MaBenhNhan.SelectedIndexChanged += new System.EventHandler(this.cmb_MaBenhNhan_SelectedIndexChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -111,13 +122,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã bệnh nhân :";
             // 
-            // cmb_MaBenhNhan
+            // lbl_tong
             // 
-            this.cmb_MaBenhNhan.FormattingEnabled = true;
-            this.cmb_MaBenhNhan.Location = new System.Drawing.Point(150, 50);
-            this.cmb_MaBenhNhan.Name = "cmb_MaBenhNhan";
-            this.cmb_MaBenhNhan.Size = new System.Drawing.Size(242, 24);
-            this.cmb_MaBenhNhan.TabIndex = 5;
+            this.lbl_tong.AutoSize = true;
+            this.lbl_tong.Location = new System.Drawing.Point(54, 193);
+            this.lbl_tong.Name = "lbl_tong";
+            this.lbl_tong.Size = new System.Drawing.Size(237, 16);
+            this.lbl_tong.TabIndex = 5;
+            this.lbl_tong.Text = "Tổng số bệnh nhân đang điều trị :";
             // 
             // frm_Nguyen_KiemTraBHYT
             // 
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Button btn_KiemTra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmb_MaBenhNhan;
+        private System.Windows.Forms.Label lbl_tong;
     }
 }

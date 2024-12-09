@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UlinityTool;
+using Utility;
 
 namespace GUI
 {
@@ -19,86 +15,129 @@ namespace GUI
             InitializeComponent();
         }
 
-        DBConnect dBConnect = new DBConnect();
-        DataTable dt_dulieu = new DataTable();
-        public void Load_DSXV()
-        {
-            dt_dulieu = dBConnect.LayTatCaBenhNhanXuatVien();
-            dataGridView1.DataSource = dt_dulieu;
-        }
-        public void Load_MaBenhNhan()
-        {
-            List<string> maBenhNhans = GetMaBenhNhan();
-            cmb_MaBenhNhan.DataSource = maBenhNhans;
-        }
+        private readonly DBconnection dbc = new DBconnection();
+        private readonly DBConnect dBConnect = new DBConnect();
 
-        private void cmbMaBenhNhan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string maBenhNhan = cmb_MaBenhNhan.SelectedItem.ToString();
+        private DataTable dt_dulieu = new DataTable();
 
-            List<string> maNhapViens = GetMaNhapVien(maBenhNhan);
-            cmb_MaNhapVien.DataSource = maNhapViens;
-        }
-        public void Load_BS()
-        {
-            string sql = "select * from BACSI";
-            dt_dulieu = dBConnect.GetDataTable(sql);
-
-            cmb_MaBacSi.DataSource = dt_dulieu;
-            cmb_MaBacSi.DisplayMember = "MaBacSi";
-            cmb_MaBacSi.ValueMember = "MaBacSi";
-
-        }
         private void frm_Nguyen_XuatVien_Load(object sender, EventArgs e)
         {
             Load_DSXV();
+            Load_MaBenhNhan();
         }
+
+        public void Load_DSXV()
+        {
+            string query = "SELECT * FROM RAVIEN";
+            try
+            {
+                dt_dulieu = dbc.GetDataTable(query);
+                if (dt_dulieu != null && dt_dulieu.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt_dulieu;
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu để hiển thị.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách xuất viện: " + ex.Message);
+            }
+        }
+
+        public void Load_MaBenhNhan()
+        {
+            List<string> maBenhNhans = GetMaBenhNhan();
+            if (maBenhNhans != null && maBenhNhans.Count > 0)
+            {
+                cmb_MaBenhNhan.DataSource = maBenhNhans;
+            }
+            else
+            {
+                MessageBox.Show("Không có mã bệnh nhân nào để hiển thị.");
+            }
+        }
+
+        private void cmb_MaBenhNhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_MaBenhNhan.SelectedIndex >= 0) // Kiểm tra nếu có phần tử được chọn
+            {
+                string maBenhNhan = cmb_MaBenhNhan.SelectedItem?.ToString();
+                if (!string.IsNullOrEmpty(maBenhNhan))
+                {
+                    string maNhapVien = GetMaNhapVien(maBenhNhan);
+                    if (!string.IsNullOrEmpty(maNhapVien))
+                    {
+                        List<string> maNhapViens = new List<string> { maNhapVien };
+                        cmb_MaNhapVien.DataSource = maNhapViens;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy mã nhập viện cho bệnh nhân này.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một mã bệnh nhân hợp lệ.");
+            }
+        }
+
         public List<string> GetMaBenhNhan()
         {
             List<string> maBenhNhans = new List<string>();
-            string query = "SELECT MaBenhNhan FROM BenhNhan";
+            string query = "SELECT MaBenhNhan FROM BENHNHAN";
             try
             {
-                DataTable dt = dBConnect.GetDataTable(query);
-
-                foreach (DataRow row in dt.Rows)
+                DataTable dt = dbc.GetDataTable(query);
+                if (dt != null && dt.Rows.Count > 0 && dt.Columns.Contains("MaBenhNhan"))
                 {
-                    maBenhNhans.Add(row["MaBenhNhan"].ToString());
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        maBenhNhans.Add(row["MaBenhNhan"].ToString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu mã bệnh nhân.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Lỗi khi lấy mã bệnh nhân: " + ex.Message);
             }
-
             return maBenhNhans;
         }
 
-        // Lấy danh sách mã nhập viện theo mã bệnh nhân
-        public List<string> GetMaNhapVien(string maBenhNhan)
+        public string GetMaNhapVien(string maBenhNhan)
         {
-            List<string> maNhapViens = new List<string>();
-            string query = "SELECT dbo.FUNC_HAM_LAY_MA_NHAP_VIEN(@MaBenhNhan)";
-
+            string maNhapVien = string.Empty;
+            string query = "SELECT dbo.FUNC_LAY_MA_NHAP_VIEN(@MaBenhNhan) AS MaNhapVien";
             try
             {
-                SqlParameter[] parameters = {
-                new SqlParameter("@MaBenhNhan", SqlDbType.VarChar) { Value = maBenhNhan }
-            };
-
-                object result = dBConnect.ExecuteScalar(query, parameters);
-
-                if (result != DBNull.Value)
+                List<SqlParameter> parameters = new List<SqlParameter>
                 {
-                    maNhapViens.Add(result.ToString());
+                    new SqlParameter("@MaBenhNhan", SqlDbType.Char) { Value = maBenhNhan }
+                };
+
+                DataTable dt = dbc.GetDataTable(query, parameters);
+                if (dt != null && dt.Rows.Count > 0 && dt.Columns.Contains("MaNhapVien"))
+                {
+                    maNhapVien = dt.Rows[0]["MaNhapVien"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu mã nhập viện.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Lỗi khi lấy mã nhập viện: " + ex.Message);
             }
 
-            return maNhapViens;
+            return maNhapVien;
         }
 
         private void btn_XuatVien_Click(object sender, EventArgs e)
@@ -106,15 +145,19 @@ namespace GUI
             string maRaVien = txt_MaRaVien.Text.Trim();
             string maNhapVien = cmb_MaNhapVien.Text.Trim();
             string maBenhNhan = cmb_MaBenhNhan.Text.Trim();
-            string maBacSi = cmb_MaBacSi.Text.Trim();
             DateTime ngayRaVien = dateTimePicker1.Value;
             string tinhTrangRaVien = txt_TinhTrang.Text.Trim();
+
+            if (string.IsNullOrEmpty(maRaVien) || string.IsNullOrEmpty(maNhapVien) || string.IsNullOrEmpty(maBenhNhan))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                return;
+            }
 
             try
             {
                 int soNgayNamVien;
-
-                bool success = dBConnect.XuatVien(maRaVien, maNhapVien, maBenhNhan, maBacSi, ngayRaVien, tinhTrangRaVien, out soNgayNamVien);
+                bool success = dBConnect.XuatVien(maRaVien, maNhapVien, maBenhNhan, ngayRaVien, tinhTrangRaVien, out soNgayNamVien);
 
                 if (success)
                 {
@@ -134,7 +177,6 @@ namespace GUI
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
     }
 }

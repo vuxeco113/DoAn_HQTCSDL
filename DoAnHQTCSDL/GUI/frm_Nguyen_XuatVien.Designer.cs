@@ -32,8 +32,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_TinhTrang = new System.Windows.Forms.TextBox();
             this.btn_XuatVien = new System.Windows.Forms.Button();
-            this.cmb_MaBacSi = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.cmb_MaNhapVien = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_MaBenhNhan = new System.Windows.Forms.ComboBox();
@@ -51,8 +49,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.cmb_MaBacSi);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cmb_MaNhapVien);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmb_MaBenhNhan);
@@ -96,24 +92,6 @@
             this.btn_XuatVien.UseVisualStyleBackColor = true;
             this.btn_XuatVien.Click += new System.EventHandler(this.btn_XuatVien_Click);
             // 
-            // cmb_MaBacSi
-            // 
-            this.cmb_MaBacSi.FormattingEnabled = true;
-            this.cmb_MaBacSi.Location = new System.Drawing.Point(583, 103);
-            this.cmb_MaBacSi.Name = "cmb_MaBacSi";
-            this.cmb_MaBacSi.Size = new System.Drawing.Size(178, 24);
-            this.cmb_MaBacSi.TabIndex = 13;
-            this.cmb_MaBacSi.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(494, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 16);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Mã bác sĩ :";
-            // 
             // cmb_MaNhapVien
             // 
             this.cmb_MaNhapVien.FormattingEnabled = true;
@@ -121,7 +99,6 @@
             this.cmb_MaNhapVien.Name = "cmb_MaNhapVien";
             this.cmb_MaNhapVien.Size = new System.Drawing.Size(178, 24);
             this.cmb_MaNhapVien.TabIndex = 11;
-            this.cmb_MaNhapVien.Visible = false;
             // 
             // label4
             // 
@@ -139,7 +116,7 @@
             this.cmb_MaBenhNhan.Name = "cmb_MaBenhNhan";
             this.cmb_MaBenhNhan.Size = new System.Drawing.Size(186, 24);
             this.cmb_MaBenhNhan.TabIndex = 9;
-            this.cmb_MaBenhNhan.SelectedIndexChanged += new System.EventHandler(this.cmbMaBenhNhan_SelectedIndexChanged);
+            this.cmb_MaBenhNhan.SelectedIndexChanged += new System.EventHandler(this.cmb_MaBenhNhan_SelectedIndexChanged);
             // 
             // txt_MaRaVien
             // 
@@ -170,7 +147,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 187);
+            this.label2.Location = new System.Drawing.Point(460, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 16);
             this.label2.TabIndex = 3;
@@ -178,7 +155,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(158, 182);
+            this.dateTimePicker1.Location = new System.Drawing.Point(583, 101);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(224, 22);
             this.dateTimePicker1.TabIndex = 2;
@@ -218,8 +195,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_TinhTrang;
         private System.Windows.Forms.Button btn_XuatVien;
-        private System.Windows.Forms.ComboBox cmb_MaBacSi;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmb_MaNhapVien;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmb_MaBenhNhan;

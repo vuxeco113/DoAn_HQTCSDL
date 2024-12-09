@@ -40,3 +40,14 @@ D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CoreComp
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.dll
 D:\hufi\hk5\He QTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DAL.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DAL.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DTO.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\Utility.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\DTO.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\bin\Debug\Utility.pdb
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.dll
+C:\Users\DELL\OneDrive\Desktop\ttnt\DoAn_HQTCSDL\DoAnHQTCSDL\DAL\obj\Debug\DAL.pdb
