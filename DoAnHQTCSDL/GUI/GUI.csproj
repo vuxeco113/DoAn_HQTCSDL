@@ -71,6 +71,12 @@
     <Compile Include="frmNhapThuoc.Designer.cs">
       <DependentUpon>frmNhapThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuNhap.Designer.cs">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongTinThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapThuoc.resx">
       <DependentUpon>frmNhapThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuNhap.resx">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinThuoc.resx">
       <DependentUpon>frmThongTinThuoc.cs</DependentUpon>

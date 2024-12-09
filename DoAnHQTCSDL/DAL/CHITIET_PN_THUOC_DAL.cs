@@ -46,6 +46,16 @@ namespace DAL
                 return false;
             }
         }
+        public List<CHITIET_PN_THUOC_DTO>get_all()
+        {
+            List<CHITIET_PN_THUOC_DTO>ds = new List<CHITIET_PN_THUOC_DTO> ();
+            foreach(DataRow dr in tbl.Rows)
+            {
+                CHITIET_PN_THUOC_DTO tmp = new CHITIET_PN_THUOC_DTO(dr[0].ToString().Trim(), dr[1].ToString().Trim(), int.Parse(dr[2].ToString().Trim()), float.Parse(dr[3].ToString().Trim()));
+                ds.Add(tmp);
+            }    
+            return ds;
+        }
       
 
     }

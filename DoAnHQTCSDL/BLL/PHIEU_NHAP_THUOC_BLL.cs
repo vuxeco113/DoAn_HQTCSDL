@@ -22,5 +22,9 @@ namespace BLL
         {
             return pntDAL.insert_PN(tmp);
         }
+        public List<PHIEU_NHAP_THUOC_DTO> get_all()
+        {
+            return pntDAL.get_all();
+        }
     }
 }

@@ -52,6 +52,17 @@ namespace DAL
                 return false;
             }
         }
+        public List<PHIEU_NHAP_THUOC_DTO>get_all()
+        {
+            List<PHIEU_NHAP_THUOC_DTO> ds = new List<PHIEU_NHAP_THUOC_DTO>();
+            foreach(DataRow dr in tbl.Rows)
+            {
+                PHIEU_NHAP_THUOC_DTO tmp = new PHIEU_NHAP_THUOC_DTO(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), float.Parse(dr[3].ToString().Trim()));
+                ds.Add(tmp);
+
+            }
+            return ds;
+        }
 
     }
 

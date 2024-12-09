@@ -19,5 +19,9 @@ namespace BLL
         {
             return ctpnDAL.insert_ChiTiet_PN(tmp);
         }
+        public List<CHITIET_PN_THUOC_DTO> get_all()
+        {
+            return ctpnDAL.get_all();   
+        }
     }
 }

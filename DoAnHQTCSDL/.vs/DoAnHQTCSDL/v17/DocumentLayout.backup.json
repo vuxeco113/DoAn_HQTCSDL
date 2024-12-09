@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\vuxec\\onedrive\\m\u00E1y t\u00EDnh\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\vuxec\\onedrive\\m\u00E1y t\u00EDnh\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\vuxec\\onedrive\\m\u00E1y t\u00EDnh\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frmphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|c:\\users\\vuxec\\onedrive\\m\u00E1y t\u00EDnh\\doan_hqtcsdl\\doan_hqtcsdl\\doanhqtcsdl\\gui\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\gui\\frmphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{212A040B-BD9B-4059-84E8-44260A3ABD41}|GUI\\GUI.csproj|solutionrelative:gui\\frmphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01EECC7D-8864-4A36-B20B-7D0DCED381C4}|BLL\\BLL.csproj|C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\bll\\chitiet_pn_thuoc_bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01EECC7D-8864-4A36-B20B-7D0DCED381C4}|BLL\\BLL.csproj|solutionrelative:bll\\chitiet_pn_thuoc_bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{156F24FE-21E8-4ADB-AB85-B96E85672459}|DAL\\DAL.csproj|C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\dal\\phieu_nhap_thuoc_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{156F24FE-21E8-4ADB-AB85-B96E85672459}|DAL\\DAL.csproj|solutionrelative:dal\\phieu_nhap_thuoc_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01EECC7D-8864-4A36-B20B-7D0DCED381C4}|BLL\\BLL.csproj|C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\bll\\phieu_nhap_thuoc_bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01EECC7D-8864-4A36-B20B-7D0DCED381C4}|BLL\\BLL.csproj|solutionrelative:bll\\phieu_nhap_thuoc_bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +42,103 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmMain.cs",
               "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
               "RelativeDocumentMoniker": "GUI\\frmMain.cs",
-              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs*",
-              "RelativeToolTip": "GUI\\frmMain.cs*",
-              "ViewState": "AgIAAN4AAAAAAAAAAAAwwPoAAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
+              "RelativeToolTip": "GUI\\frmMain.cs",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAiwAEBAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T16:25:54.443Z",
+              "WhenOpened": "2024-12-09T17:41:52.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
-              "RelativeDocumentMoniker": "GUI\\frmMain.cs",
-              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs [Design]*",
-              "RelativeToolTip": "GUI\\frmMain.cs [Design]*",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\Program.cs*",
+              "RelativeToolTip": "GUI\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T16:25:51.832Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-09T17:27:58.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frmDangNhap.cs",
-              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmDangNhap.cs",
-              "RelativeDocumentMoniker": "GUI\\frmDangNhap.cs",
-              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmDangNhap.cs",
-              "RelativeToolTip": "GUI\\frmDangNhap.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAnwDcAAAA+AAAAAAAAAA==",
+              "Title": "frmPhieuNhap.cs",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmPhieuNhap.cs",
+              "RelativeDocumentMoniker": "GUI\\frmPhieuNhap.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmPhieuNhap.cs",
+              "RelativeToolTip": "GUI\\frmPhieuNhap.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAUwDsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T16:23:33.758Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T17:26:57.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PHIEU_NHAP_THUOC_BLL.cs",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\BLL\\PHIEU_NHAP_THUOC_BLL.cs",
+              "RelativeDocumentMoniker": "BLL\\PHIEU_NHAP_THUOC_BLL.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\BLL\\PHIEU_NHAP_THUOC_BLL.cs",
+              "RelativeToolTip": "BLL\\PHIEU_NHAP_THUOC_BLL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T17:21:29.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PHIEU_NHAP_THUOC_DAL.cs",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\DAL\\PHIEU_NHAP_THUOC_DAL.cs",
+              "RelativeDocumentMoniker": "DAL\\PHIEU_NHAP_THUOC_DAL.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\DAL\\PHIEU_NHAP_THUOC_DAL.cs",
+              "RelativeToolTip": "DAL\\PHIEU_NHAP_THUOC_DAL.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowD8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T17:16:28.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmPhieuNhap.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmPhieuNhap.cs",
+              "RelativeDocumentMoniker": "GUI\\frmPhieuNhap.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmPhieuNhap.cs [Design]",
+              "RelativeToolTip": "GUI\\frmPhieuNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T17:16:22.906Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmDangNhap.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmDangNhap.cs",
-              "RelativeDocumentMoniker": "GUI\\frmDangNhap.cs",
-              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmDangNhap.cs [Design]",
-              "RelativeToolTip": "GUI\\frmDangNhap.cs [Design]",
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs",
+              "RelativeDocumentMoniker": "GUI\\frmMain.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\GUI\\frmMain.cs [Design]",
+              "RelativeToolTip": "GUI\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T16:23:31.174Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-09T16:25:51.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CHITIET_PN_THUOC_BLL.cs",
+              "DocumentMoniker": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\BLL\\CHITIET_PN_THUOC_BLL.cs",
+              "RelativeDocumentMoniker": "BLL\\CHITIET_PN_THUOC_BLL.cs",
+              "ToolTip": "C:\\Users\\vuxec\\OneDrive\\M\u00E1y t\u00EDnh\\DoAn_HQTCSDL\\DoAn_HQTCSDL\\DoAnHQTCSDL\\BLL\\CHITIET_PN_THUOC_BLL.cs",
+              "RelativeToolTip": "BLL\\CHITIET_PN_THUOC_BLL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T17:35:30.837Z"
             }
           ]
         }

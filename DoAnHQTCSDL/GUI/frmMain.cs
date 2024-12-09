@@ -251,5 +251,11 @@ namespace GUI
             ten.Text = "Chào :";
             //CurrentFormChild.Close();
         }
+
+        private void thốngKêPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmPhieuNhap());
+            label_top.Text = "Phiếu Nhập";
+        }
     }
 }

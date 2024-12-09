@@ -298,3 +298,4 @@ D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.exe
 D:\hufi\hk5\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.pdb
 C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frm_Phong_QuanLyBacSi.resources
 C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\vuxec\OneDrive\Máy tính\DoAn_HQTCSDL\DoAn_HQTCSDL\DoAnHQTCSDL\GUI\obj\Debug\GUI.frmPhieuNhap.resources
